@@ -23,7 +23,7 @@ namespace UI
         public MainWindow()
         {
             InitializeComponent();
-            Console.WriteLine("22s2");
+            Console.WriteLine("22sdf2");
         }
     }
 }
