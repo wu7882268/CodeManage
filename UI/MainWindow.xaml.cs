@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,18 @@ namespace UI
         public MainWindow()
         {
             InitializeComponent();
-            Console.WriteLine("22sdf2");
+        }
+        private void MainWindow_OnClosing(object sender, CancelEventArgs e)
+        {
+            var b = MessageBox.Show("您确定要退出登录吗？", "提示", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
+            if (b == MessageBoxResult.Yes)
+            {
+                LoginWindow.login.Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

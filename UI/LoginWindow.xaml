@@ -1,14 +1,14 @@
-﻿<Window x:Class="UI.MainWindow"
+﻿<Window x:Class="UI.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="商超管理系统" Height="463" Width="567" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize" Closing="MainWindow_OnClosing">
+        Title="商超管理系统" Height="600" Width="1024" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize" Closing="Window_Closing">
     <Viewbox>
-        <Grid Height="463" Width="603">
-            <ContentControl Name="ContentControlMain"></ContentControl>
+        <Grid Height="575" Width="1024">
+            <ContentControl Name="ContentControlLogin"></ContentControl>
         </Grid>
     </Viewbox>
 </Window>

@@ -1,14 +1,12 @@
-﻿<Window x:Class="UI.MainWindow"
+﻿<Window x:Class="UI.StartWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="商超管理系统" Height="463" Width="567" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize" Closing="MainWindow_OnClosing">
-    <Viewbox>
-        <Grid Height="463" Width="603">
-            <ContentControl Name="ContentControlMain"></ContentControl>
-        </Grid>
-    </Viewbox>
+        Title="StartWindow" Height="40" Width="40">
+    <Grid>
+        
+    </Grid>
 </Window>
