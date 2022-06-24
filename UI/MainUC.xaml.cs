@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UI.Cashier;
+using UI.Manage;
 
 namespace UI
 {
@@ -23,6 +25,25 @@ namespace UI
         public MainUC()
         {
             InitializeComponent();
+        }
+
+        private void Button_Cashier_OnClick(object sender, RoutedEventArgs e)
+        {
+            CashierWindow cashierWindow = new CashierWindow();
+            MainWindow.main.Hide();
+            cashierWindow.ShowDialog();
+        }
+
+        private void Button_Manage_OnClick(object sender, RoutedEventArgs e)
+        {
+            ManageWindw manageWindw = new ManageWindw();
+            MainWindow.main.Hide();
+            manageWindw.ShowDialog();
+        }
+
+        private void Button_Stop_OnClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow.main.Close();
         }
     }
 }

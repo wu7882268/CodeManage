@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="商超管理系统" Height="463" Width="567" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize" Closing="MainWindow_OnClosing">
+        Title="商超管理系统" Height="463" Width="567" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize" Closing="MainWindow_OnClosing" WindowStartupLocation="CenterScreen">
     <Viewbox>
         <Grid Height="463" Width="603">
-            <ContentControl Name="ContentControlMain"></ContentControl>
+            <ContentControl  Name="ContentControlMain"></ContentControl>
         </Grid>
     </Viewbox>
 </Window>

@@ -21,9 +21,15 @@ namespace UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        internal static Window main;
         public MainWindow()
         {
             InitializeComponent();
+            main = this;
+            ContentControlMain.Content = new Frame()
+            {
+                Content = new MainUC()
+            };
         }
         private void MainWindow_OnClosing(object sender, CancelEventArgs e)
         {

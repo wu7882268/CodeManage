@@ -5,8 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UI"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="431" d:DesignWidth="560">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Name="Button_Cashier" Grid.Row="0" FontSize="35" Content="收银系统" Margin="60,30" FontFamily="宋体" Click="Button_Cashier_OnClick"/>
+        <Button Name="Button_Manage" Grid.Row="1" FontSize="35" Content="管理系统" Margin="60,30" FontFamily="宋体" Click="Button_Manage_OnClick"/>
+        <Button Name="Button_Stop" Grid.Row="2" FontSize="35" Content="退出系统" Margin="60,30" FontFamily="宋体" Click="Button_Stop_OnClick"/>
     </Grid>
 </UserControl>
