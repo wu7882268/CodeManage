@@ -6,11 +6,26 @@
              xmlns:local="clr-namespace:UI.Cashier"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1914">
-    <Grid>
+    <Grid Background="#ffffff">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="6*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid  Margin="20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Rectangle Stroke="Black" Grid.ColumnSpan="3"  StrokeThickness="1.5" 
+                       StrokeDashArray="5 5" SnapsToDevicePixels="True" RadiusX="2" RadiusY="2"/>
+            <Label Content="扫码条/键入编号：" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="26" Foreground="#323232" Margin="50,0,0,0"/>
+            <TextBox Grid.Column="1" Margin="0,18" VerticalContentAlignment="Center" FontSize="22" Foreground="#323232"/>
+            <StackPanel Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal">
+                <Button Grid.Column="2" Height="50" Width="150" Content="添加" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
+                <Button Grid.Column="2" Height="50" Width="150" Content="扫码自动添加" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

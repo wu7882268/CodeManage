@@ -13,7 +13,10 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Background="#f0f0f0">
+    <UserControl.Background>
+        <ImageBrush ImageSource="Login1.png"/>
+    </UserControl.Background>
+    <Grid Background="#00f0f0f0">
         <!--<Image Margin="140,122,0,142" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" Height="311" Source="./images/logo1.png"></Image>-->
         <Grid Margin="0,100,50,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="400" Height="360">
             <Grid.Effect>
@@ -26,30 +29,30 @@
                 <RowDefinition Height="10*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
-            <Rectangle Grid.RowSpan="5" Fill="#ffffff" RadiusX="20" RadiusY="20"/>
-            <Label Content="  用户登录" Grid.Row="0" Margin="0,1,257,57" Foreground="#323232" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontFamily="正楷" Width="143"/>
-            <Label Content="商超管理系统" Grid.Row="0" Margin="10,40,10,11" Foreground="#53706c" FontSize="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontFamily="LiSu" Width="380"/>
+            <Rectangle Grid.RowSpan="5" Fill="#d6e6f2" RadiusX="20" RadiusY="20"/>
+            <Label Content="  用户登录" Grid.Row="0" Margin="0,1,257,57" Foreground="#769fcd" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontFamily="正楷" Width="143"/>
+            <Label Content="商超管理系统" Grid.Row="0" Margin="10,40,10,11" Foreground="#769fcd" FontSize="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontFamily="LiSu" Width="380"/>
             <Grid Grid.Row="1" Margin="40,11">
-                <Border Background="#ffffff"  BorderBrush="#323232" BorderThickness="1"/>
-                <TextBox Name="TextBox_id" Panel.ZIndex="1" FontSize="30" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#323232" Margin="0,0,0,0" FontFamily="Segoe UI Symbol" GotFocus="TextBox_id_GotFocus" LostFocus="TextBox_id_LostFocus" />
-                <Label Name="Label_id" Content="请 输 入 登 录 ID" FontSize="20" Foreground="#e0e0e0" Margin="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Border Background="#ffffff"  BorderBrush="#d6e6f2" BorderThickness="1"/>
+                <TextBox Name="TextBox_id" Panel.ZIndex="1" FontSize="30" VerticalContentAlignment="Center"  BorderBrush="{x:Null}"  Foreground="#323232" Margin="0,0,0,0" FontFamily="Segoe UI Symbol" Background="{x:Null}" GotFocus="TextBox_id_GotFocus" LostFocus="TextBox_id_LostFocus" />
+                <Label Name="Label_id" Content="请 输 入 登 录 ID" FontSize="20" Foreground="#e0e0e0" Margin="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#f7fbfc"/>
                 <!--其他控件-->
             </Grid>
             <Grid Grid.Row="2" Margin="40,11">
-                <Border Background="#ffffff"  BorderBrush="#323232" BorderThickness="1"/>
+                <Border Background="#ffffff"  BorderBrush="#d6e6f2" BorderThickness="1"/>
                 <PasswordBox Name="TextBox_mm" Panel.ZIndex="1" FontSize="20" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#323232" Margin="0,0,0,0" FontFamily="Segoe UI Symbol" GotFocus="TextBox_mm_GotFocus" LostFocus="TextBox_mm_LostFocus" />
-                <Label Name="Label_mm" Content="请 输 入 密 码" FontSize="20" Foreground="#e0e0e0" Margin="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Label Name="Label_mm" Content="请 输 入 密 码" FontSize="20" Foreground="#e0e0e0" Background="#f7fbfc" Margin="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 <!--其他控件-->
             </Grid>
             <Grid Grid.Row="3" Margin="40,11,210,11">
-                <Border Background="#ffffff"  BorderBrush="#323232" BorderThickness="1"/>
+                <Border Background="#ffffff"  BorderBrush="#d6e6f2" BorderThickness="1"/>
                 <TextBox Name="TextBox_yzm" Panel.ZIndex="1" FontSize="30" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#323232" FontFamily="Segoe UI Symbol" GotFocus="TextBox_yzm_GotFocus" LostFocus="TextBox_yzm_LostFocus" HorizontalContentAlignment="Center" />
-                <Label Name="Label_yzm" Content="验 证 码" FontSize="26" Foreground="#e0e0e0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Label Name="Label_yzm" Content="验 证 码" FontSize="26" Foreground="#e0e0e0" Background="#f7fbfc" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 <!--其他控件-->
             </Grid>
             <Image x:Name="imgyzm" Grid.Row="3" HorizontalAlignment="Left" Margin="219,11,0,11" Width="141" Loaded="Imgyzm_Loaded"/>
             <Button x:Name="buttonyzm" Grid.Row="3" HorizontalAlignment="Left" Margin="219,11,0,11" Background="#00ffffff" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Buttonyzm_Click" Style="{DynamicResource BtnInfoStylelog}" Width="141" Height="Auto"/>
-            <Button Style="{DynamicResource BtnInfoStylelog}" x:Name="buttonloginin" Foreground="#ffffff" Content="登 录" Grid.Row="4" Margin="40,5,40,16" FontSize="24" Background="#125f3f" BorderBrush="{x:Null}" Click="Buttonloginin_Click" Height="Auto" Width="Auto" IsDefault="True"/>
+            <Button Style="{DynamicResource BtnInfoStylelog}" x:Name="buttonloginin" Foreground="#ffffff" Content="登 录" Grid.Row="4" Margin="40,5,40,16" FontSize="24" Background="#769fcd" BorderBrush="{x:Null}" Click="Buttonloginin_Click" Height="Auto" Width="Auto" IsDefault="True"/>
         </Grid>
     </Grid>
 </UserControl>
