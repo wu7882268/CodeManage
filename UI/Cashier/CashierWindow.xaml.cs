@@ -22,6 +22,10 @@ namespace UI.Cashier
         public CashierWindow()
         {
             InitializeComponent();
+            ContentControlCashier.Content = new Frame()
+            {
+                Content = new CashierMainUC()
+            };
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

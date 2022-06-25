@@ -10,22 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UI
+namespace UI.Cashier
 {
     /// <summary>
-    /// StartWindow.xaml 的交互逻辑
+    /// CashierMainUC.xaml 的交互逻辑
     /// </summary>
-    public partial class StartWindow : Window
+    public partial class CashierMainUC : UserControl
     {
-        public StartWindow()
+        public CashierMainUC()
         {
             InitializeComponent();
-            this.Hide();
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
-            
         }
     }
 }

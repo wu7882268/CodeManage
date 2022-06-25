@@ -85,6 +85,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Cashier\CashierMainUC.xaml.cs">
+      <DependentUpon>CashierMainUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Cashier\CashierWindow.xaml.cs">
       <DependentUpon>CashierWindow.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
     <Compile Include="StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Cashier\CashierMainUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Cashier\CashierWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
