@@ -6,7 +6,14 @@
              xmlns:local="clr-namespace:UI.Cashier"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1914">
-    <Grid Background="#ffffff">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../ResourceDictionarys/MyResourceDictionary2.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="#89b8b9">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="7*"></RowDefinition>
@@ -21,11 +28,100 @@
             <Rectangle Stroke="Black" Grid.ColumnSpan="3"  StrokeThickness="1.5" 
                        StrokeDashArray="5 5" SnapsToDevicePixels="True" RadiusX="2" RadiusY="2"/>
             <Label Content="扫码条/键入编号：" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="26" Foreground="#323232" Margin="50,0,0,0"/>
-            <TextBox Grid.Column="1" Margin="0,18" VerticalContentAlignment="Center" FontSize="22" Foreground="#323232"/>
+            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" Style="{DynamicResource TextBoxStyle}"  Grid.Column="1" Margin="0,18" FontSize="22" >
+            </TextBox>
             <StackPanel Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button Grid.Column="2" Height="50" Width="150" Content="添加" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
-                <Button Grid.Column="2" Height="50" Width="150" Content="扫码自动添加" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
+                <Button Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="添加" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
+                <Button Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="扫码自动添加" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
             </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="1.9*" />
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" x:Name="column1"/>
+            <Grid Grid.Column="1" x:Name="column2"/>
+            <Grid Grid.Column="2" x:Name="column3"/>
+            <Grid Grid.Column="3" x:Name="column4"/>
+            <Grid Grid.Column="1" x:Name="column5"/>
+            <Grid Grid.Column="1" x:Name="column6"/>
+            <Grid Grid.Column="6" x:Name="column7"/>
+        </Grid>
+        <ListView Grid.Row="1"   
+                  Name="ListView_Sales"
+                  HorizontalContentAlignment="Center"
+                  Loaded="ListView_Sales_OnLoaded"
+                  ItemsSource="{Binding}" 
+                  >
+            <ListView.ContextMenu>
+                <ContextMenu StaysOpen="true">
+                    <MenuItem Header="批量录入" Name="MenuItem_update"/>
+                    <MenuItem Header="删除" />
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="序号" Width="{Binding ElementName=column1,Path=ActualWidth}" DisplayMemberBinding="{Binding No}" />
+                    <GridViewColumn Header="数量" Width="{Binding ElementName=column2,Path=ActualWidth}" DisplayMemberBinding="{Binding Number}" />
+                    <GridViewColumn Header="条码" Width="{Binding ElementName=column3,Path=ActualWidth}" DisplayMemberBinding="{Binding Barcode}" />
+                    <GridViewColumn Header="商品名"  Width="{Binding ElementName=column4,Path=ActualWidth}" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="单价"  Width="{Binding ElementName=column5,Path=ActualWidth}" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn Header="金额" Width="{Binding ElementName=column6,Path=ActualWidth}" DisplayMemberBinding="{Binding Amount }" />
+                    <GridViewColumn Header="备注" Width="{Binding ElementName=column7,Path=ActualWidth}" DisplayMemberBinding="{Binding Note}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Stroke="Black" Grid.Row="1" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="3" StrokeThickness="1.5" 
+                       StrokeDashArray="5 5" SnapsToDevicePixels="True" RadiusX="2" RadiusY="2" Margin="50,0"/>
+            <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="共：" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="26" FontWeight="Bold"></Label>
+                <Label Name="Label_Money" Content="0.00" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontWeight="Bold"></Label>
+                <Label Content="元" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="26" FontWeight="Bold"></Label>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="商品件数：" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="26" FontWeight="Bold"></Label>
+                <Label Name="Label_Number" Content="0" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontWeight="Bold"></Label>
+                <Label Content="件" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="26" FontWeight="Bold"></Label>
+            </StackPanel>
+            <Label Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Content="应收金额："  FontWeight="Bold" FontSize="26" Foreground="#323232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="75,0"/>
+            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Margin="70,0"/>
+            <Label Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Content="实收金额："  FontWeight="Bold" FontSize="26" Foreground="#323232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="75,0"/>
+            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" Margin="70,0"/>
+            <Label Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="2" Content="应找金额："  FontWeight="Bold" FontSize="26" Foreground="#323232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="75,0"/>
+            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="2" Margin="70,0"/>
+            <Label Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" Content="交来金额："  FontWeight="Bold" FontSize="26" Foreground="#323232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="75,0"/>
+            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" Margin="70,0"/>
+            <Button Grid.Row="1" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="2" Height="75" Width="192" Content="收银" Background="#e7e6e1" FontSize="24" Style="{DynamicResource ButtonRound}" Margin="15.8,25.2,174.6,35.8" />
+            <Button Grid.Row="4" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="2"  Height="75" Width="192" Content="退出" Background="#e7e6e1" FontSize="24" Style="{DynamicResource ButtonRound}" Margin="15.8,26.2,174.6,33.2" />
         </Grid>
     </Grid>
 </UserControl>

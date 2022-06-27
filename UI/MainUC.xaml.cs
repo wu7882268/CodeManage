@@ -36,7 +36,7 @@ namespace UI
 
         private void Button_Manage_OnClick(object sender, RoutedEventArgs e)
         {
-            ManageWindw manageWindw = new ManageWindw();
+            ManageWindow manageWindw = new ManageWindow();
             MainWindow.main.Hide();
             manageWindw.ShowDialog();
         }

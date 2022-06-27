@@ -303,14 +303,14 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                        <Image x:Name="Img" VerticalAlignment="Center" HorizontalAlignment="Center" Source="Images/home.png" Stretch="None"/>
+                        <Image x:Name="Img" VerticalAlignment="Center" HorizontalAlignment="Center" Source="../Images/home.png" Stretch="None"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Img" Property="Source" Value="Images/home.png"/>
+                            <Setter TargetName="Img" Property="Source" Value="../Images/home.png"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Img" Property="Source" Value="Images/home.png"/>
+                            <Setter TargetName="Img" Property="Source" Value="../Images/home.png"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -323,14 +323,14 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                        <Image x:Name="Img" VerticalAlignment="Center" HorizontalAlignment="Center" Source="Images/gj.png" Stretch="None"/>
+                        <Image x:Name="Img" VerticalAlignment="Center" HorizontalAlignment="Center" Source="../Images/gj.png" Stretch="None"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Img" Property="Source" Value="Images/gj.png"/>
+                            <Setter TargetName="Img" Property="Source" Value="../Images/gj.png"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Img" Property="Source" Value="Images/gj.png"/>
+                            <Setter TargetName="Img" Property="Source" Value="../Images/gj.png"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -524,7 +524,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
-                    <Border x:Name="templateRoot" CornerRadius="4" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="#ffffff">
+                    <Border x:Name="templateRoot" CornerRadius="4" SnapsToDevicePixels="true" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="#FF565656">
                         <Border x:Name="splitBorder" CornerRadius="4" Width="40" SnapsToDevicePixels="true" Margin="0,0,0,0" HorizontalAlignment="Right" 
                                         BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="#00ffffff">
                             <Border.Background>
@@ -533,7 +533,7 @@
                                     <GradientStop Color="#00C6C6CA" Offset="0.75"/>
                                 </LinearGradientBrush>
                             </Border.Background>
-                            <Path x:Name="arrow" VerticalAlignment="Center" Margin="9,0,0,0" Stretch="Fill" Height="12" Width="16" HorizontalAlignment="Left" Fill="#323232" Data="M 50,50 L 0,0 100,0 z"/>
+                            <Path x:Name="arrow" VerticalAlignment="Center" Margin="9,0,0,0" Stretch="Fill" Height="12" Width="16" HorizontalAlignment="Left" Fill="#ffffff" Data="M 50,50 L 0,0 100,0 z"/>
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -703,7 +703,7 @@
 
     <!-- ComboBox属性设置 -->
     <Style x:Key="ComboBoxStyle" TargetType="{x:Type ComboBox}">
-        <Setter Property="Background" Value="#90ffffff"/>
+        <Setter Property="Background" Value="#909194BD"/>
         <Setter Property="BorderBrush" Value="#00E4E7EC"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -1375,7 +1375,7 @@
     </Style>
     <!--Expander样式-->
     <Style x:Key="ExpanderStyle" TargetType="{x:Type Expander}">
-        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Foreground" Value="#393e46"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
@@ -1400,7 +1400,7 @@
                       BorderBrush="{TemplateBinding BorderBrush}"
                       BorderThickness="{TemplateBinding BorderThickness}" 
                       Width="{Binding ElementName=HeaderSite,Path=Width}"
-                      Background="#2d3274">
+                      Background="#79a8a9">
                             <ContentPresenter 
                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
@@ -1423,7 +1423,7 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Width" Value="300"/>
         <Setter Property="Height" Value="60" />
-        <Setter Property="Background" Value="#2d3274" />
+        <Setter Property="Background" Value="#79a8a9" />
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -1438,14 +1438,14 @@
                      Background="{TemplateBinding Background}" SnapsToDevicePixels="True" Canvas.Right="20">
                             <Rectangle x:Name="rectangleta" Width="15" Height="60" Fill="#2d3274" Canvas.Right="0"/>
                             <Line X1="0" Y1="0" X2="0" Y2="30" Stroke="#ffffff" StrokeThickness="3" 
-                        Margin="0" StrokeDashArray="1" Canvas.Right="0" Canvas.Left="285" Canvas.Top="10"/>
+                        Margin="0" StrokeDashArray="1" Canvas.Right="0" Canvas.Left="240" Canvas.Top="10"/>
                         </Canvas>
                         <Canvas x:Name="canvChecked" Visibility="Hidden" Margin="0,5,30,0"
                      Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
                      Background="{TemplateBinding Background}" SnapsToDevicePixels="True" Canvas.Right="20">
-                            <Path Data="M13.494,10.697l-3.497-3.6l-3.497,3.6L6.494,8.328l3.503-3.631l3.48,3.592L13.494,10.697z" Fill="#ffffff" Canvas.Right="10" Canvas.Top="8"/>
-                            <Path Data="M13.494,10.697l-3.497-3.6l-3.497,3.6L6.494,8.328l3.503-3.631l3.48,3.592L13.494,10.697z" Fill="#ffffff" Canvas.Right="10" Canvas.Top="15"/>
-                            <Path Data="M13.494,10.697l-3.497-3.6l-3.497,3.6L6.494,8.328l3.503-3.631l3.48,3.592L13.494,10.697z" Fill="#ffffff" Canvas.Right="10" Canvas.Top="23"/>
+                            <Path Data="M13.494,10.697l-3.497-3.6l-3.497,3.6L6.494,8.328l3.503-3.631l3.48,3.592L13.494,10.697z" Fill="#ffffff" Canvas.Right="58" Canvas.Top="8"/>
+                            <Path Data="M13.494,10.697l-3.497-3.6l-3.497,3.6L6.494,8.328l3.503-3.631l3.48,3.592L13.494,10.697z" Fill="#ffffff" Canvas.Right="58" Canvas.Top="15"/>
+                            <Path Data="M13.494,10.697l-3.497-3.6l-3.497,3.6L6.494,8.328l3.503-3.631l3.48,3.592L13.494,10.697z" Fill="#ffffff" Canvas.Right="58" Canvas.Top="23"/>
                             <Rectangle Width="{TemplateBinding Width}" Height="1" Canvas.Bottom="0" Fill="#2d3274" />
                         </Canvas>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
@@ -1602,11 +1602,11 @@
         </Setter>
     </Style>
     <Style x:Key="BtnInfoStylemain" TargetType="Button">
-        <Setter Property="Width" Value="70"/>
+        <Setter Property="Width" Value="50"/>
         <Setter Property="Height" Value="25"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="#393e46"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="#FF2D3274"/>
+        <Setter Property="Background" Value="#79a8a9"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -1616,11 +1616,11 @@
                     <ControlTemplate.Triggers>
                         <!--鼠标放上-->
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF353D86"/>
+                            <Setter TargetName="border" Property="Background" Value="#aacfd0"/>
                         </Trigger>
                         <!--鼠标摁下-->
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF1e2248"/>
+                            <Setter TargetName="border" Property="Background" Value="#b9e1dc"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

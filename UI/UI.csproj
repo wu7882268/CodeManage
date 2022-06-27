@@ -94,14 +94,20 @@
     <Compile Include="LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginUC_new.xaml.cs">
+      <DependentUpon>LoginUC_new.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainUC.xaml.cs">
       <DependentUpon>MainUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Manage\ManageWindw.xaml.cs">
-      <DependentUpon>ManageWindw.xaml</DependentUpon>
+    <Compile Include="Manage\ManageMainUC.xaml.cs">
+      <DependentUpon>ManageMainUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageWindow.xaml.cs">
+      <DependentUpon>ManageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
@@ -115,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginUC_new.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,7 +148,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Manage\ManageWindw.xaml">
+    <Page Include="Manage\ManageMainUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manage\ManageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,6 +227,35 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1.png" />
+    <Resource Include="Images\2.png" />
+    <Resource Include="Images\3.jpg" />
+    <Resource Include="Images\fzjh.png" />
+    <Resource Include="Images\gj.png" />
+    <Resource Include="Images\hm.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\jsgl.png" />
+    <Resource Include="Images\kzmb.png" />
+    <Resource Include="Images\password.png" />
+    <Resource Include="Images\qxgl.png" />
+    <Resource Include="Images\rwgl.png" />
+    <Resource Include="Images\rzsj.png" />
+    <Resource Include="Images\set.jpg" />
+    <Resource Include="Images\sjjh.png" />
+    <Resource Include="Images\sjkgj.png" />
+    <Resource Include="Images\sqfw.png" />
+    <Resource Include="Images\start.png" />
+    <Resource Include="Images\stop.png" />
+    <Resource Include="Images\tjfx.png" />
+    <Resource Include="Images\userimages.jpg" />
+    <Resource Include="Images\userimages1.png" />
+    <Resource Include="Images\username.png" />
+    <Resource Include="Images\username1.png" />
+    <Resource Include="Images\yhgl.png" />
+    <Resource Include="Images\zdgl.png" />
+    <Resource Include="Images\zyzc.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

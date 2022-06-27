@@ -61,4 +61,214 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type ListViewItem}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <Border Name="Bd"
+                                        Background="{TemplateBinding Background}">
+                        <GridViewRowPresenter 
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                            Width="Auto" Margin="0" Content="{TemplateBinding Content}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" Value="#FF404040"/>
+                            <Setter Property="Foreground" Value="#b9d7ea"/>
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="#b9d7ea"/>
+                            <Setter TargetName="Bd" Property="BorderThickness" Value="0,1,0,1"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true" />
+                                <Condition Property="IsSelected" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="#FF666666"/>
+                            <Setter Property="Foreground" Value="LightGray"/>
+                            <Setter Property="BorderBrush" Value="#b9d7ea"/>
+                            <Setter Property="BorderThickness" Value="0,1,0,1"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ListViewStyle" TargetType="{x:Type ListView}">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListView}">
+                    <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ItemsPanelTemplate x:Key="ItemsPanelTemplate">
+        <WrapPanel IsItemsHost="True"/>
+    </ItemsPanelTemplate>
+    <Style x:Key="ListViewItemStyle" TargetType="{x:Type ListViewItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <CheckBox BorderThickness="0" Style="{DynamicResource CheckBoxStyle}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CheckBoxStyle" TargetType="{x:Type CheckBox}">
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Border x:Name="bd" Background="Gray">
+                        <TextBlock x:Name="tb" Width="40" TextWrapping="Wrap" Text="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem,Mode=FindAncestor},Path=Content}" HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="bd" Property="Background" Value="Blue"/>
+                            <Setter TargetName="tb" Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="tmpForThumb" TargetType="{x:Type Thumb}">
+        <Border>
+            <Rectangle Width="1" Name="rec">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0.5,0.3" EndPoint="1,1">
+                        <GradientStop Color="#323232" Offset="0.22"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="rec" Property="Fill" Value="LightGreen"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                    <Grid Name="g">
+                        <Grid.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#e7e6e1" Offset="0.3"/>
+                                <GradientStop Color="#d6e6f2" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <Border Name="bd" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter Margin="5,4,1,3"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                        <Thumb Name="PART_HeaderGripper" Template="{StaticResource tmpForThumb}" HorizontalAlignment="Right" Margin="0,0,-1,0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="g" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#d6e6f2" Offset="0.3"/>
+                                        <GradientStop Color="#f7fbfc" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--ListViewItem的样式-->
+    <!--<Style TargetType="{x:Type ListViewItem}">
+        <Style.Setters>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Border x:Name="bd"
+                                BorderThickness="1"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="True">
+                            <GridViewRowPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  Margin="3"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.Setters>
+                                    <Setter TargetName="bd" Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0.5,0.22" EndPoint="0.5,1">
+                                                <GradientStop Color="LightGray" Offset="0.31"/>
+                                                <GradientStop Color="Gray" Offset="0.88"/>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger.Setters>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>-->
+
+    <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}" >
+        <!--尺寸-->
+        <!--<Setter Property="Width" Value="200px"/>
+        <Setter Property="Height" Value="36"/>-->
+        <!--字体、字号、字色-->
+        <Setter Property="FontFamily" Value="宋体"/>
+        <Setter Property="FontSize" Value="14px"/>
+        <Setter Property="Foreground" Value="#323232"/>
+        <!--对齐-->
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <!--背景-->
+
+        <!--方法二-->
+        <Setter Property="BorderThickness" Value="1.5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <!--背景、边框-->
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"  SnapsToDevicePixels="True" CornerRadius="5">
+                        <Border.Background>
+                            <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE3E3E3" Offset="0"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>-->
+                            <SolidColorBrush Color="White"/>
+                        </Border.Background>
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"></ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

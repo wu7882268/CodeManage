@@ -26,7 +26,7 @@ namespace UI
             login = this;
             ContentControlLogin.Content = new Frame()
             {
-                Content = new LoginUC()
+                Content = new LoginUC_new()
             };
         }
 

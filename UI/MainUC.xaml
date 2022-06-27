@@ -13,7 +13,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Background="#b9d7ea">
+    <Grid Background="#649dad">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -22,8 +22,8 @@
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Background="#769fcd" Style="{DynamicResource ButtonRound}" Name="Button_Cashier" Grid.Row="0" FontSize="35" Content="收银系统" Margin="60,30" FontFamily="宋体" Click="Button_Cashier_OnClick"/>
-        <Button Background="#769fcd" Style="{DynamicResource ButtonRound}" Name="Button_Manage" Grid.Row="1" FontSize="35" Content="管理系统" Margin="60,30" FontFamily="宋体" Click="Button_Manage_OnClick"/>
-        <Button Background="#769fcd" Style="{DynamicResource ButtonRound}" Name="Button_Stop" Grid.Row="2" FontSize="35" Content="退出系统" Margin="60,30" FontFamily="宋体" Click="Button_Stop_OnClick"/>
+        <Button Background="#dff5f2" Foreground="#537791" Style="{DynamicResource ButtonRound}" Name="Button_Cashier" Grid.Row="0" FontSize="35" Content="收银系统" Margin="60,30" FontFamily="幼圆" Click="Button_Cashier_OnClick"/>
+        <Button Background="#dff5f2" Foreground="#537791" Style="{DynamicResource ButtonRound}" Name="Button_Manage" Grid.Row="1" FontSize="35" Content="管理系统" Margin="60,30" FontFamily="幼圆" Click="Button_Manage_OnClick"/>
+        <Button Background="#dff5f2" Foreground="#537791" Style="{DynamicResource ButtonRound}" Name="Button_Stop" Grid.Row="2" FontSize="35" Content="退出系统" Margin="60,30" FontFamily="幼圆" Click="Button_Stop_OnClick"/>
     </Grid>
 </UserControl>

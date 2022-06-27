@@ -17,11 +17,17 @@ namespace UI.Manage
     /// <summary>
     /// ManageWindw.xaml 的交互逻辑
     /// </summary>
-    public partial class ManageWindw : Window
+    public partial class ManageWindow : Window
     {
-        public ManageWindw()
+        public static Window manageWindow = null;
+        public ManageWindow()
         {
             InitializeComponent();
+            manageWindow = this;
+            ContentControlManage.Content = new Frame()
+            {
+                Content = new ManageMainUC()
+            };
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
