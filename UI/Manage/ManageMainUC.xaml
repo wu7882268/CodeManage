@@ -28,183 +28,122 @@
             <Expander x:Name="expander_sjjh" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_sjjh_Expanded" >
                 <Expander.Header>
                     <Grid Height="20">
-                        <Image Margin="10,0,106,0" Source="/Images/sjjh.png" Width="41"/>
-                        <TextBlock Margin="56,0,44,-17" Text="数据交换" />
+                        <Image Margin="5,0,106,2" Source="/Images/基本信息.png" Width="41"/>
+                        <TextBlock Margin="40,0,43.8,0" Text="基本信息" FontSize="16"/>
                     </Grid>
                 </Expander.Header>
                 <StackPanel Margin="20,0,120,0">
-                    <Grid>
-                        <Image  Source="/Images/rwgl.png"  Height="16" Width="26" Margin="12,5,110,3.8" Panel.ZIndex="1"/>
-                        <Button x:Name="Button_sjjh_rwgl" Content="任务管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
+                    <Grid Margin="0,0,0,2">
+                        <Image  Source="/Images/优质供应商.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button x:Name="Button_gysgl" Click="Button_gysgl_OnClick" Content="供应商管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
                     </Grid>
-                    <Grid>
-                        <Image Source="/Images/zyzc.png"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_zyzc"  Content="资源注册" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/fzjh.png"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_fzjh" Content="负载均衡" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
+                    <Grid Margin="0,0,0,2">
+                        <Image  Source="/Images/顾客.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button  Name="Button_User" Click="Button_User_OnClick" Content="客户管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
                     </Grid>
                 </StackPanel>
             </Expander>
             <Expander x:Name="expander_sqfw" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_sqfw_Expanded">
                 <Expander.Header>
                     <Grid Height="20">
-                        <Image Margin="10,0,106,3" Source="/Images/sqfw.png"  Height="17" Width="41"/>
-                        <TextBlock Margin="56,0,44,-17" Text="授权访问" />
+                        <Image Margin="5,0,106,0" Source="/Images/进货1.png"  Width="41"/>
+                        <TextBlock Margin="40,0,44,0" Text="进货管理" FontSize="16"/>
                     </Grid>
                 </Expander.Header>
-                  <StackPanel Margin="20,0,120,0">
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_fwzf" Content="服务转发" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
+                <StackPanel Margin="20,0,120,0">
+                    <Grid Margin="0,0,0,2">
+                        <Image  Source="/Images/类型.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button Name="Button_type" Click="Button_type_OnClick"  Content="商品类型" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
                     </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_dljk" Content="代理监控" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/查询.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button Name="Button_Goods" Click="Button_Goods_OnClick"  Content="商品管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
+                    </Grid>
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/进货.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button Name="Button_Replenish" Click="Button_Replenish_OnClick" Content="商品进货" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
+                    </Grid>
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/退货.png"  Width="26" Height="20" Margin="12,0,110,0"  Panel.ZIndex="1"/>
+                        <Button Name="Button_Return" Click="Button_Return_OnClick" Content="商品退货" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
                     </Grid>
                 </StackPanel>
             </Expander>
             <Expander x:Name="expander_rzsj" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_rzsj_Expanded">
                 <Expander.Header>
                     <Grid Height="20">
-                        <Image Margin="10,0,106,3" Source="/Images/rzsj.png"  Height="17" Width="41"/>
-                        <TextBlock Margin="56,0,44,-17" Text="日志审计" />
+                        <Image Margin="5,0,106,3" Source="/Images/销售.png"  Height="17" Width="41"/>
+                        <TextBlock Margin="40,0,44,-17" FontSize="16" Text="销售管理" />
                     </Grid>
                 </Expander.Header>
-                  <StackPanel Margin="20,0,120,0">
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_rzsj_sjtj" Content="数据传输" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
+                <StackPanel Margin="20,0,120,0">
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/销售出库.png"   Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button Name="Button_spxs" Click="Button_spxs_OnClick" Content="商品销售" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
                     </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_rzsj_glyrz" Content="管理员日志" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_rzsj_yhcz" Content="用户操作" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_rzsj_fwzf" Content="服务转发" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
-                    </Grid>
-                </StackPanel>
-            </Expander>
-            <Expander x:Name="expander_tjfx" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_tjfx_Expanded">
-                <Expander.Header>
-                    <Grid Height="20">
-                        <Image Margin="10,0,106,3" Source="/Images/tjfx.png"  Height="17" Width="41"/>
-                        <TextBlock Margin="56,0,44,-17" Text="统计分析" />
-                    </Grid>
-                </Expander.Header>
-                  <StackPanel Margin="20,0,120,0">
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_tjfx_sjtj" Content="数据统计" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="Button_tjfx_sjfx" Content="数据分析" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/退货退款.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button Name="Button_rzsj_gkth" Click="Button_rzsj_gkth_OnClick" Content="顾客退货" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
                     </Grid>
                 </StackPanel>
             </Expander>
             <Expander x:Name="expander_kzmb" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_kzmb_Expanded">
                 <Expander.Header>
                     <Grid Height="20">
-                        <Image Margin="10,0,106,3" Source="/Images/kzmb.png"  Height="17" Width="41"/>
-                        <TextBlock Margin="56,0,44,-17" Text="控制面板" />
+                        <Image Margin="5,0,106,3" Source="/Images/库存.png"  Height="19.5" Width="26"/>
+                        <TextBlock Margin="40,0,44,-17" FontSize="16" Text="库存管理" />
                     </Grid>
                 </Expander.Header>
-                  <StackPanel Margin="20,0,120,0">
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button x:Name="button_kzmb_jcsz" Content="基础设置" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
+                <StackPanel Margin="20,0,120,0">
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/仓库_库存详情.png"   Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button Name="button_ckgl" Click="Button_ckgl_OnClick"  Content="仓库管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
                     </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_ywdy"  Content="业务定义" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_rzpz" Content="日志配置" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_zhaq" Content="账号安全" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_xtgl" Content="系统管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_bjsz" Content="报警设置" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_bdksj" Content="病毒库升级" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_xtgj" Content="系统工具" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_bfhy" Content="备份还原" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_kzmb_cpsq"  Content="产品授权" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
+                    <Grid Margin="0,0,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="99*"/>
+                            <ColumnDefinition Width="61*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Images/更改库存说明.png" Width="26" Height="19" Margin="18,0,0,0" Panel.ZIndex="1" HorizontalAlignment="Left" d:LayoutOverrides="Width, TopMargin, BottomMargin"/>
+                        <Button x:Name="button_kcgl" Click="Button_kcgl_OnClick" Content="库存管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" Grid.ColumnSpan="2" />
                     </Grid>
                 </StackPanel>
             </Expander>
+            <Expander x:Name="expander_tjfx" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_tjfx_Expanded">
+                <Expander.Header>
+                    <Grid Height="20">
+                        <Image Margin="5,0,106,3" Source="/Images/统计.png"  Height="17" Width="41"/>
+                        <TextBlock Margin="40,0,44,-17" FontSize="16" Text="统计报表" />
+                    </Grid>
+                </Expander.Header>
+                <StackPanel Margin="20,0,120,0">
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/销售统计.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button Name="Button_xstj" Click="Button_xstj_OnClick" Content="销售统计" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
+                    </Grid>
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/库存统计.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
+                        <Button Name="Button_kctj" Click="Button_kctj_OnClick" Content="库存统计" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" VerticalAlignment="Top" />
+                    </Grid>
+                </StackPanel>
+            </Expander>
+
             <Expander x:Name="expander_qxgl" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_qxgl_Expanded">
                 <Expander.Header>
                     <Grid Height="20">
-                        <Image Margin="10,0,106,3" Source="/Images/qxgl.png"  Height="17" Width="41"/>
-                        <TextBlock Margin="56,0,44,-17" Text="权限管理" />
+                        <Image Margin="5,0,106,3" Source="/Images/权限.png"  Height="17" Width="41"/>
+                        <TextBlock Margin="40,0,44,-17" FontSize="16" Text="权限管理" />
                     </Grid>
                 </Expander.Header>
-                  <StackPanel Margin="20,0,120,0">
-                    <Grid>
-                        <Image Source="/Images/yhgl.png"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
+                <StackPanel Margin="20,0,120,0">
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/224用户.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
                         <Button Name="button_qxgl_yhgl" Content="用户管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
                     </Grid>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="25*"/>
-                            <ColumnDefinition Width="17*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="/Images/jsgl.png"  Height="16" Margin="37,6,62,3" Panel.ZIndex="1"/>
+                    <Grid Margin="0,0,0,2">
+                        <Image Source="/Images/角色管理.png"  Width="26" Height="18" Margin="12,0,110,0" Panel.ZIndex="1"/>
                         <Button Content="角色管理" Name="button_qxgl_jsgl" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" Grid.ColumnSpan="2"/>
                     </Grid>
-                </StackPanel>
-            </Expander>
-            <Expander x:Name="expander_sjkgl" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_sjkgl_Expanded">
-                <Expander.Header>
-                    <Grid Height="20">
-                        <Image Margin="10,0,120,3" Source="/Images/zdgl.png"  Height="17" Width="41"/>
-                        <TextBlock Margin="56,0,44,-17" Text="字典管理" />
-                    </Grid>
-                </Expander.Header>
-                  <StackPanel Margin="20,0,120,0">
-                    <!--<Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Content="主页管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
-                    <Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Content="登陆管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>-->
-                    <Grid>
-                        <Image Source="/Images/qxgl.png"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Name="button_zdgl_qxy"  Content="权限域" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
-                    <!--<Grid>
-                        <Image Source="/Images/3.jpg"  Height="16"  Width="26" Margin="12,5,110,3.8"  Panel.ZIndex="1"/>
-                        <Button Content="菜单和功能树" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>-->
                 </StackPanel>
             </Expander>
         </StackPanel>
@@ -232,9 +171,9 @@
         <!--</Viewbox>-->
         <Border  BorderBrush="#FF2F3778" BorderThickness="2" HorizontalAlignment="Left" Height="912" VerticalAlignment="Top" Width="1669" Grid.Column="1" Margin="0,0,-6,0" Grid.Row="1"/>
         <Grid Grid.Column="1" Grid.Row="1" Background="#aacfd0">
-            <ContentControl x:Name="ContentControlsub" Margin="43.5,43.5,43.5,63.5" Height="832" Width="1583"/>
+            <ContentControl x:Name="ContentControlsub" Margin="43.5,43.5,43.5,43.5"/>
         </Grid>
-        <ContentControl x:Name="ContentControl_main" HorizontalAlignment="Left" VerticalAlignment="Top" Height="939" Width="1669" Grid.Column="1" Grid.Row="1" BorderBrush="#FF2F3778"/>
+        <ContentControl x:Name="ContentControl_main" HorizontalAlignment="Left" VerticalAlignment="Top" Height="939" Width="1709" Grid.Column="1" Grid.Row="1" BorderBrush="#FF2F3778" Margin="0.2,0.2,-0.4,0"/>
     </Grid>
 
 </UserControl>

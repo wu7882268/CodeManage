@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UI.Manage.Information;
+using UI.Manage.InventoryManage;
+using UI.Manage.Replenish;
+using UI.Manage.Sales;
+using UI.Manage.Statistical;
 
 namespace UI.Manage
 {
@@ -29,7 +34,7 @@ namespace UI.Manage
             expander_kzmb.IsExpanded = false;
             expander_qxgl.IsExpanded = false;
             expander_rzsj.IsExpanded = false;
-            expander_sjkgl.IsExpanded = false;
+
             expander_sqfw.IsExpanded = false;
             expander_tjfx.IsExpanded = false;
         }
@@ -40,7 +45,7 @@ namespace UI.Manage
             expander_qxgl.IsExpanded = false;
             expander_rzsj.IsExpanded = false;
             expander_sjjh.IsExpanded = false;
-            expander_sjkgl.IsExpanded = false;
+
             expander_tjfx.IsExpanded = false;
         }
 
@@ -49,7 +54,7 @@ namespace UI.Manage
             expander_kzmb.IsExpanded = false;
             expander_qxgl.IsExpanded = false;
             expander_sjjh.IsExpanded = false;
-            expander_sjkgl.IsExpanded = false;
+
             expander_sqfw.IsExpanded = false;
             expander_tjfx.IsExpanded = false;
         }
@@ -60,7 +65,7 @@ namespace UI.Manage
             expander_qxgl.IsExpanded = false;
             expander_rzsj.IsExpanded = false;
             expander_sjjh.IsExpanded = false;
-            expander_sjkgl.IsExpanded = false;
+
             expander_sqfw.IsExpanded = false;
         }
 
@@ -69,7 +74,7 @@ namespace UI.Manage
             expander_qxgl.IsExpanded = false;
             expander_rzsj.IsExpanded = false;
             expander_sjjh.IsExpanded = false;
-            expander_sjkgl.IsExpanded = false;
+
             expander_sqfw.IsExpanded = false;
             expander_tjfx.IsExpanded = false;
         }
@@ -79,7 +84,6 @@ namespace UI.Manage
             expander_kzmb.IsExpanded = false;
             expander_rzsj.IsExpanded = false;
             expander_sjjh.IsExpanded = false;
-            expander_sjkgl.IsExpanded = false;
             expander_sqfw.IsExpanded = false;
             expander_tjfx.IsExpanded = false;
         }
@@ -127,6 +131,102 @@ namespace UI.Manage
                 ManageWindow.manageWindow.Close();
             }
             samplenoSource.SelectedItem = null;
+        }
+
+        private void Button_gysgl_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new SupplierUC()
+            };
+        }
+
+        private void Button_type_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new TypeUC()
+            };
+        }
+
+        private void Button_Goods_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new GoodsUC()
+            };
+        }
+
+        private void Button_Replenish_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new ReplenishUC()
+            };
+        }
+
+        private void Button_Return_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new ReturnUC()
+            };
+        }
+
+        private void Button_User_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new CustomerUC()
+            };
+        }
+
+        private void Button_spxs_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new SalesUC()
+            };
+        }
+
+        private void Button_rzsj_gkth_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new CustomerReturnUC()
+            };
+        }
+
+        private void Button_ckgl_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new WarehouseUC()
+            };
+        }
+
+        private void Button_kcgl_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new TransfersUC()
+            };
+        }
+
+        private void Button_xstj_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new SalesStatistics()
+            };
+        }
+
+        private void Button_kctj_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = new Frame()
+            {
+                Content = new InventoryStatistics()
+            };
         }
     }
 }

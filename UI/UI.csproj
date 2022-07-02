@@ -64,6 +64,12 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -75,6 +81,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Utility.Tool.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Utility.Tool.Controls.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -103,11 +113,47 @@
     <Compile Include="MainUC.xaml.cs">
       <DependentUpon>MainUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manage\InventoryManage\TransfersUC.xaml.cs">
+      <DependentUpon>TransfersUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\InventoryManage\WarehouseUC.xaml.cs">
+      <DependentUpon>WarehouseUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Information\CustomerUC.xaml.cs">
+      <DependentUpon>CustomerUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Information\SupplierUC.xaml.cs">
+      <DependentUpon>SupplierUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manage\ManageMainUC.xaml.cs">
       <DependentUpon>ManageMainUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manage\ManageWindow.xaml.cs">
       <DependentUpon>ManageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\ReturnUC.xaml.cs">
+      <DependentUpon>ReturnUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\GoodsUC.xaml.cs">
+      <DependentUpon>GoodsUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\TypeUC.xaml.cs">
+      <DependentUpon>TypeUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\ReplenishUC.xaml.cs">
+      <DependentUpon>ReplenishUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Sales\CustomerReturnUC.xaml.cs">
+      <DependentUpon>CustomerReturnUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Sales\SalesUC.xaml.cs">
+      <DependentUpon>SalesUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Statistical\InventoryStatistics.xaml.cs">
+      <DependentUpon>InventoryStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Statistical\SalesStatistics.xaml.cs">
+      <DependentUpon>SalesStatistics.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
@@ -148,6 +194,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manage\InventoryManage\TransfersUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\InventoryManage\WarehouseUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Information\CustomerUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Information\SupplierUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Manage\ManageMainUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +217,38 @@
     <Page Include="Manage\ManageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manage\Replenish\ReturnUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Replenish\GoodsUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Replenish\TypeUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Replenish\ReplenishUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Sales\CustomerReturnUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Sales\SalesUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Statistical\InventoryStatistics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Statistical\SalesStatistics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ResourceDictionarys\MyResourceDictionary.xaml">
       <SubType>Designer</SubType>
@@ -188,6 +282,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Images\Login1.webp" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -257,5 +352,48 @@
     <Resource Include="Images\zdgl.png" />
     <Resource Include="Images\zyzc.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\优质供应商.png" />
+    <Resource Include="Images\基本信息.png" />
+    <Resource Include="Images\顾客.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\进货管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\查询.png" />
+    <Resource Include="Images\类型.png" />
+    <Resource Include="Images\进货.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\退货.png" />
+    <Resource Include="Images\退货退款.png" />
+    <Resource Include="Images\销售.png" />
+    <Resource Include="Images\销售出库.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\进货1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\仓库_库存详情.png" />
+    <Resource Include="Images\库存.png" />
+    <Resource Include="Images\更改库存说明.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\库存统计.png" />
+    <Resource Include="Images\统计.png" />
+    <Resource Include="Images\销售统计.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\角色管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\224用户.png" />
+    <Resource Include="Images\权限.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\消息通知.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
