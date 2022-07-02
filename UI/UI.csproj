@@ -101,6 +101,9 @@
     <Compile Include="Cashier\CashierWindow.xaml.cs">
       <DependentUpon>CashierWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Demo\AddBase.xaml.cs">
+      <DependentUpon>AddBase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,21 @@
     </Compile>
     <Compile Include="MainUC.xaml.cs">
       <DependentUpon>MainUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Information\SupplierAdd.xaml.cs">
+      <DependentUpon>SupplierAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Information\CustomerAdd.xaml.cs">
+      <DependentUpon>CustomerAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\InventoryManage\WarehouseAdd.xaml.cs">
+      <DependentUpon>WarehouseAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\InventoryManage\TransfersAdd.xaml.cs">
+      <DependentUpon>TransfersAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\InventoryManage\TransfersALL.xaml.cs">
+      <DependentUpon>TransfersALL.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manage\InventoryManage\TransfersUC.xaml.cs">
       <DependentUpon>TransfersUC.xaml</DependentUpon>
@@ -130,6 +148,9 @@
     </Compile>
     <Compile Include="Manage\ManageWindow.xaml.cs">
       <DependentUpon>ManageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\TypeAdd.xaml.cs">
+      <DependentUpon>TypeAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manage\Replenish\ReturnUC.xaml.cs">
       <DependentUpon>ReturnUC.xaml</DependentUpon>
@@ -166,6 +187,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Demo\AddBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="LoginUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -194,6 +219,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manage\Information\SupplierAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Information\CustomerAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\InventoryManage\WarehouseAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\InventoryManage\TransfersAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\InventoryManage\TransfersALL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Manage\InventoryManage\TransfersUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -217,6 +262,10 @@
     <Page Include="Manage\ManageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manage\Replenish\TypeAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Manage\Replenish\ReturnUC.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -394,6 +443,9 @@
   <ItemGroup>
     <Resource Include="Images\消息通知.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DLL\Utility.Tool.Controls.dll" />
+    <Content Include="DLL\Utility.Tool.Controls.pdb" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

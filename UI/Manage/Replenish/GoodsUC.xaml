@@ -107,6 +107,7 @@
                         <DataGridTextColumn Header="商品名称" Width="10*" Foreground="#393e46" Binding="{Binding operateuser}"/>
                         <DataGridTextColumn Header="商品条码" Width="10*" Foreground="#393e46" Binding="{Binding level}"/>
                         <DataGridTextColumn Header="所在仓库" Width="10*" Foreground="#393e46" Binding="{Binding level}"/>
+                        <DataGridTextColumn Header="生产日期" Width="10*" Foreground="#393e46" Binding="{Binding level}"/>
                         <DataGridTemplateColumn Header="操作" Width="10*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
