@@ -64,7 +64,7 @@
                     <Grid.OpacityMask>
                         <VisualBrush Visual="{Binding ElementName=maskf}"/>
                     </Grid.OpacityMask>
-                    <Label Foreground="#393e46"  Content="共有 0 条数据" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top" Height="37" Width="181" FontSize="20" VerticalContentAlignment="Center"/>
+                    <Label Foreground="#393e46"  Content="共有 0 个仓库" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top" Height="37" Width="181" FontSize="20" VerticalContentAlignment="Center"/>
                     <Grid Margin="1442,10,14,10"  Width="100" HorizontalAlignment="Right">
                         <!--其他控件-->
                         <Grid.OpacityMask>
@@ -78,7 +78,7 @@
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=maskd}"/>
                         </Grid.OpacityMask>
-                        <Button x:Name="button_return" Content="新建" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
+                        <Button x:Name="button_add" Click="Button_add_OnClick" Content="新建" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
                     </Grid>
                     <Rectangle x:Name="maskf" Fill="#aacfd0" RadiusX="20" RadiusY="20" Panel.ZIndex="-1" />
                 </Grid>
@@ -86,6 +86,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="序号" Width="3*" Foreground="#393e46" Binding="{Binding id}"/>
                         <DataGridTextColumn Header="仓库名" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>
+                        <DataGridTextColumn Header="共有商品" Width="10*" Foreground="#393e46" Binding="{Binding operateuser}"/>
                         <DataGridTextColumn Header="创建时间" Width="10*" Foreground="#393e46" Binding="{Binding operateuser}"/>
                         <DataGridTextColumn Header="备注" Width="10*" Foreground="#393e46" Binding="{Binding description}"/>
                         <DataGridTemplateColumn Header="操作" Width="10*">

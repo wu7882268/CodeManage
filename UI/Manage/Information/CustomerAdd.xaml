@@ -67,8 +67,8 @@
         <Label Grid.Row="5" Foreground="#393e46" Content="客户地址：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <Label Grid.Row="1" Foreground="#393e46" Content="客户姓名：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <TextBox CaretBrush="#cccccc" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
-        <ComboBox Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="3" SelectedIndex="0" FontSize="16">
-            <ComboBoxItem Content="-请选择表结构-" Foreground="#323232" FontSize="16" Height="22"/>
+        <ComboBox  Style="{DynamicResource ComboBoxStyleSub}"  Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="3" SelectedIndex="0" FontSize="16">
+            <ComboBoxItem Content="-请选择性别-" Foreground="#323232" FontSize="16" Height="22"/>
         </ComboBox>
         <TextBox CaretBrush="#cccccc" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
         <TextBox CaretBrush="#cccccc" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />

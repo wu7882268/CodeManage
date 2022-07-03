@@ -149,6 +149,15 @@
     <Compile Include="Manage\ManageWindow.xaml.cs">
       <DependentUpon>ManageWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Replenish\ReturnAdd.xaml.cs">
+      <DependentUpon>ReturnAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\ReplenishAdd.xaml.cs">
+      <DependentUpon>ReplenishAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\GoodsAdd.xaml.cs">
+      <DependentUpon>GoodsAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Replenish\TypeAdd.xaml.cs">
       <DependentUpon>TypeAdd.xaml</DependentUpon>
     </Compile>
@@ -164,11 +173,17 @@
     <Compile Include="Manage\Replenish\ReplenishUC.xaml.cs">
       <DependentUpon>ReplenishUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Sales\SalesAdd.xaml.cs">
+      <DependentUpon>SalesAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Sales\CustomerReturnUC.xaml.cs">
       <DependentUpon>CustomerReturnUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manage\Sales\SalesUC.xaml.cs">
       <DependentUpon>SalesUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Sales\CustomerReturnAdd.xaml.cs">
+      <DependentUpon>CustomerReturnAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manage\Statistical\InventoryStatistics.xaml.cs">
       <DependentUpon>InventoryStatistics.xaml</DependentUpon>
@@ -263,6 +278,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manage\Replenish\ReturnAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Replenish\ReplenishAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Replenish\GoodsAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Manage\Replenish\TypeAdd.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -283,11 +310,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Manage\Sales\SalesAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Manage\Sales\CustomerReturnUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Manage\Sales\SalesUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Sales\CustomerReturnAdd.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

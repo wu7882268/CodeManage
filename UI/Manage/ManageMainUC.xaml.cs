@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Models.Delegates;
 using UI.Manage.Information;
 using UI.Manage.InventoryManage;
 using UI.Manage.Replenish;
@@ -28,6 +29,24 @@ namespace UI.Manage
         public ManageMainUC()
         {
             InitializeComponent();
+            Delegates.JumpDelegate = (str =>
+            {
+                Type type = Type.GetType(str);
+                var obj = Activator.CreateInstance(type);
+                ContentControlsub.Content = new Frame()
+                {
+                    Content = obj
+                };
+            });
+            Delegates.JumpDelegateObj = (name, o) =>
+            {
+                Type type = Type.GetType(name);
+                var obj = Activator.CreateInstance(type, o);
+                ContentControlsub.Content = new Frame()
+                {
+                    Content = obj
+                };
+            };
         }
         private void Expander_sjjh_Expanded(object sender, RoutedEventArgs e)
         {

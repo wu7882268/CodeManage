@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Models.Delegates;
 
 namespace UI.Manage.InventoryManage
 {
@@ -23,6 +24,11 @@ namespace UI.Manage.InventoryManage
         public TransfersUC()
         {
             InitializeComponent();
+        }
+
+        private void Button_add_OnClick(object sender, RoutedEventArgs e)
+        {
+            Delegates.JumpDelegate("UI.Manage.InventoryManage.TransfersAdd");
         }
     }
 }

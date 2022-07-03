@@ -817,6 +817,9 @@
     <Style x:Key="ComboBoxStyleSub" TargetType="{x:Type ComboBox}">
         <Setter Property="Background" Value="#aacfd0"/>
         <Setter Property="BorderBrush" Value="#00E4E7EC"/>
+        <Setter Property="Width" Value="303"/>
+        <Setter Property="Height" Value="33"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
@@ -1130,7 +1133,7 @@
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="#555da6"/>
+                <Setter Property="Background" Value="#b9e1dc"/>
             </Trigger>
         </Style.Triggers>
     </Style>

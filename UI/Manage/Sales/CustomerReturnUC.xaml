@@ -72,7 +72,7 @@
                     <Label Grid.Column="5"  Foreground="#393e46"  Content="商品类型：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="100" FontSize="20" VerticalContentAlignment="Center"/>
                     <TextBox Grid.Column="3" Height="26"  HorizontalAlignment="Left" VerticalAlignment="Center" Background="#aacfd0" Foreground="#393e46" Margin="130,0,0,0"  FontSize="18"  Width="150" ></TextBox>
                     <TextBox Grid.Column="4" Height="26"  HorizontalAlignment="Left" VerticalAlignment="Center" Background="#aacfd0" Foreground="#393e46" Margin="130,0,0,0"  FontSize="18"  Width="150" ></TextBox>
-                    <ComboBox Grid.Column="5"  HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
+                    <ComboBox Height="26" Grid.Column="5"  HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
                         <ComboBoxItem Content="全部" Foreground="#393e46" FontSize="15" Height="22"/>
                         <ComboBoxItem Content="成功" Foreground="#393e46" FontSize="15" Height="22"/>
                         <ComboBoxItem Content="失败" Foreground="#393e46" FontSize="15" Height="22"/>
@@ -105,7 +105,7 @@
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=maskd}"/>
                         </Grid.OpacityMask>
-                        <Button x:Name="button_return" Content="新建" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
+                        <Button x:Name="button_return" Click="Button_return_OnClick" Content="添加" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
                     </Grid>
 
                     <Rectangle x:Name="maskf" Fill="#aacfd0" RadiusX="20" RadiusY="20" Panel.ZIndex="-1" />
@@ -116,7 +116,7 @@
                         <DataGridTextColumn Header="商品名称" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>
                         <DataGridTextColumn Header="退货数量" Width="5*" Foreground="#393e46" Binding="{Binding level}"/>
                         <DataGridTextColumn Header="商品单位" Width="5*" Foreground="#393e46" Binding="{Binding level}"/>
-                        <DataGridTextColumn Header="退货价格" Width="5*" Foreground="#393e46" Binding="{Binding description}"/>
+                        <DataGridTextColumn Header="退还价格" Width="5*" Foreground="#393e46" Binding="{Binding description}"/>
                         <DataGridTextColumn Header="是否返还商品" Width="5*" Foreground="#393e46" Binding="{Binding operateuser}"/>
                         <DataGridTextColumn Header="退货原因" Width="15*" Foreground="#393e46" Binding="{Binding operateuser}"/>
                         <DataGridTemplateColumn Header="操作" Width="10*">

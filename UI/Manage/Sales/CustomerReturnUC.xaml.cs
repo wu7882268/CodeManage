@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Models.Delegates;
 
 namespace UI.Manage.Sales
 {
@@ -23,6 +24,11 @@ namespace UI.Manage.Sales
         public CustomerReturnUC()
         {
             InitializeComponent();
+        }
+
+        private void Button_return_OnClick(object sender, RoutedEventArgs e)
+        {
+            Delegates.JumpDelegate("UI.Sales.CustomerReturnAdd");
         }
     }
 }

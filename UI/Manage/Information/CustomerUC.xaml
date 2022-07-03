@@ -88,7 +88,7 @@
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=maskd}"/>
                         </Grid.OpacityMask>
-                        <Button x:Name="button_return" Content="新建" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
+                        <Button x:Name="button_add" Click="Button_add_OnClick" Content="添加"  Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
                     </Grid>
 
                     <Rectangle x:Name="maskf" Fill="#aacfd0" RadiusX="20" RadiusY="20" Panel.ZIndex="-1" />

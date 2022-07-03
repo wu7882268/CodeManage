@@ -12,23 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Models.Delegates;
 
-namespace UI.Manage.Replenish
+namespace UI.Replenish
 {
     /// <summary>
     /// SupplierUC.xaml 的交互逻辑
     /// </summary>
-    public partial class GoodsUC : UserControl
+    public partial class ReplenishAdd : UserControl
     {
-        public GoodsUC()
+        public ReplenishAdd()
         {
             InitializeComponent();
-        }
-
-        private void Button_add_OnClick(object sender, RoutedEventArgs e)
-        {
-            Delegates.JumpDelegate("UI.Replenish.GoodsAdd");
         }
     }
 }
