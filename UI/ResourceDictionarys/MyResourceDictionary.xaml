@@ -1157,7 +1157,7 @@
         <Setter Property="Foreground" Value="#337ab7"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="#012D3274"/>
+        <Setter Property="Background" Value="#002D3274"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">

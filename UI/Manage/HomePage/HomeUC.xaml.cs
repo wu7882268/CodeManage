@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UI.Manage.Information
+namespace UI.Manage.HomePage
 {
     /// <summary>
     /// SupplierUC.xaml 的交互逻辑
     /// </summary>
-    public partial class CustomerAdd : UserControl
+    public partial class HomeUC : UserControl
     {
-        public CustomerAdd()
+        public HomeUC()
         {
             InitializeComponent();
         }
     }
 }
-

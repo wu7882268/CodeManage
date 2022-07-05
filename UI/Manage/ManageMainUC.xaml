@@ -163,8 +163,8 @@
                 <ComboBoxItem Name="ComboBoxItem_aqtc" Content="安全退出" Padding="10,0,10,0" Foreground="#323232"/>
             </ComboBox>
             <!--<Image Source="/Images/userImages1.png" Width="50" Height="50" Name="image1" Margin="1502,54,360,33" Panel.ZIndex="1"/>-->
-            <Button x:Name="button_home" Margin="1703,53,165,34" Width="50" Height="50" Panel.ZIndex="1" Style="{DynamicResource BtnImageStyle1}" />
-            <Button Name="button_gj" Margin="1770,53,98,34" Width="50" Height="50" Panel.ZIndex="1" Style="{DynamicResource BtnImageStyle2}" />
+            <Button Click="Button_home_OnClick" x:Name="button_home" Margin="1703,53,165,34" Width="50" Height="50" Panel.ZIndex="1" Style="{DynamicResource BtnImageStyle1}" />
+            <Button  Click="Button_home_OnClick" Name="button_gj" Margin="1770,53,98,34" Width="50" Height="50" Panel.ZIndex="1" Style="{DynamicResource BtnImageStyle2}" />
             <Label Content="管理员用户" Foreground="#ffffff" FontSize="24" HorizontalContentAlignment="Stretch" FontFamily="Segoe Script" Margin="1560,56,189,34"/>
         </Grid>
         <!--</Canvas>-->

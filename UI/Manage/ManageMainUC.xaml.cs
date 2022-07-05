@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Models.Delegates;
+using UI.Manage.HomePage;
 using UI.Manage.Information;
 using UI.Manage.InventoryManage;
 using UI.Manage.Replenish;
@@ -33,6 +34,7 @@ namespace UI.Manage
             {
                 Type type = Type.GetType(str);
                 var obj = Activator.CreateInstance(type);
+                ContentControl_main.Content = null;
                 ContentControlsub.Content = new Frame()
                 {
                     Content = obj
@@ -42,10 +44,15 @@ namespace UI.Manage
             {
                 Type type = Type.GetType(name);
                 var obj = Activator.CreateInstance(type, o);
+                ContentControl_main.Content = null;
                 ContentControlsub.Content = new Frame()
                 {
                     Content = obj
                 };
+            };
+            ContentControl_main.Content = new Frame()
+            {
+                Content = new HomeUC()
             };
         }
         private void Expander_sjjh_Expanded(object sender, RoutedEventArgs e)
@@ -154,6 +161,7 @@ namespace UI.Manage
 
         private void Button_gysgl_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new SupplierUC()
@@ -162,6 +170,7 @@ namespace UI.Manage
 
         private void Button_type_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new TypeUC()
@@ -170,6 +179,7 @@ namespace UI.Manage
 
         private void Button_Goods_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new GoodsUC()
@@ -178,6 +188,7 @@ namespace UI.Manage
 
         private void Button_Replenish_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new ReplenishUC()
@@ -186,6 +197,7 @@ namespace UI.Manage
 
         private void Button_Return_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new ReturnUC()
@@ -194,6 +206,7 @@ namespace UI.Manage
 
         private void Button_User_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new CustomerUC()
@@ -202,6 +215,7 @@ namespace UI.Manage
 
         private void Button_spxs_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new SalesUC()
@@ -210,6 +224,7 @@ namespace UI.Manage
 
         private void Button_rzsj_gkth_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new CustomerReturnUC()
@@ -218,6 +233,7 @@ namespace UI.Manage
 
         private void Button_ckgl_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new WarehouseUC()
@@ -226,6 +242,7 @@ namespace UI.Manage
 
         private void Button_kcgl_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new TransfersUC()
@@ -234,6 +251,7 @@ namespace UI.Manage
 
         private void Button_xstj_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new SalesStatistics()
@@ -242,9 +260,19 @@ namespace UI.Manage
 
         private void Button_kctj_OnClick(object sender, RoutedEventArgs e)
         {
+            ContentControl_main.Content = null;
             ContentControlsub.Content = new Frame()
             {
                 Content = new InventoryStatistics()
+            };
+        }
+
+        private void Button_home_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentControlsub.Content = null;
+            ContentControl_main.Content = new Frame()
+            {
+                Content = new HomeUC()
             };
         }
     }

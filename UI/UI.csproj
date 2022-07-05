@@ -116,6 +116,9 @@
     <Compile Include="MainUC.xaml.cs">
       <DependentUpon>MainUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manage\HomePage\HomeUC.xaml.cs">
+      <DependentUpon>HomeUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Information\SupplierAdd.xaml.cs">
       <DependentUpon>SupplierAdd.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
     <Page Include="MainUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manage\HomePage\HomeUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Manage\Information\SupplierAdd.xaml">
       <Generator>MSBuild:Compile</Generator>
