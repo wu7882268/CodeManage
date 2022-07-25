@@ -116,7 +116,7 @@
                         <DataGridTextColumn Header="商品名称" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>
                         <DataGridTextColumn Header="退货数量" Width="5*" Foreground="#393e46" Binding="{Binding level}"/>
                         <DataGridTextColumn Header="商品单位" Width="5*" Foreground="#393e46" Binding="{Binding level}"/>
-                        <DataGridTextColumn Header="退还价格" Width="5*" Foreground="#393e46" Binding="{Binding description}"/>
+                        <DataGridTextColumn Header="退还单价" Width="5*" Foreground="#393e46" Binding="{Binding description}"/>
                         <DataGridTextColumn Header="是否返还商品" Width="5*" Foreground="#393e46" Binding="{Binding operateuser}"/>
                         <DataGridTextColumn Header="退货原因" Width="15*" Foreground="#393e46" Binding="{Binding operateuser}"/>
                         <DataGridTemplateColumn Header="操作" Width="10*">

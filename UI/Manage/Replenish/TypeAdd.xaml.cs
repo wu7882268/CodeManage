@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BLL;
+using Models.Infos.ApiInfo;
+using Models.Interfaces;
 
 namespace UI.Replenish
 {
@@ -23,6 +26,47 @@ namespace UI.Replenish
         public TypeAdd()
         {
             InitializeComponent();
+        }
+        ITypeBusiness typeBusiness = new TypeBusiness();
+        IGoodsTypeBusiness goodsTypeBusiness = new GoodsTypeBusiness();
+        private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            var list = typeBusiness.GetAll();
+            ComboBox comboBox = sender as ComboBox;
+            foreach (var apiTypeInfo in list)
+            {
+                ComboBoxItem comboBoxItem = new ComboBoxItem();
+                comboBoxItem.FontSize = 16;
+                comboBoxItem.Height = 22;
+                comboBoxItem.Foreground = new SolidColorBrush(Color.FromArgb(0xff, 0x32, 0x32, 0x32));
+                comboBoxItem.Content = apiTypeInfo.name;
+                comboBoxItem.DataContext = apiTypeInfo;
+                comboBox.Items.Add(comboBoxItem);
+            }
+        }
+
+        private void Button_tj_OnClick(object sender, RoutedEventArgs e)
+        {
+            ApiGoodsTypeAddInfo addInfo = new ApiGoodsTypeAddInfo()
+            {
+                name = TextBox_name.Text,
+                barCode = TextBox_barCode.Text,
+                price = double.Parse(TextBox_price.Text.Trim()),
+                unit = TextBox_unit.Text,
+                details = TextBox_details.Text,
+                goodsType = 2,
+            };
+            if(!string.IsNullOrEmpty(TextBox_costPrice.Text.Trim()))
+                addInfo.costPrice = double.Parse(TextBox_costPrice.Text.Trim());
+            if (ComboBox_type.SelectedItem is ComboBoxItem comboBoxItem)
+            {
+                var obj = comboBoxItem.DataContext as ApiTypeInfo;
+                List<int> types = new List<int>();
+                types.Add(obj.id);
+                addInfo.typeId = types;
+            }
+
+            goodsTypeBusiness.Insert(addInfo);
         }
     }
 }

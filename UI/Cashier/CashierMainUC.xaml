@@ -31,8 +31,12 @@
             <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" Style="{DynamicResource TextBoxStyle}"  Grid.Column="1" Margin="0,18" FontSize="22" >
             </TextBox>
             <StackPanel Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="添加" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
-                <Button Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="扫码自动添加" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
+                <Button Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="扫码自动添加" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
+                <Label Content="数量:" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Foreground="#323232" Margin="10,0,0,0"/>
+                <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" Width="200" Style="{DynamicResource TextBoxStyle}"  Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,2" FontSize="22" >
+                </TextBox>
+                <Button Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="手动添加" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">

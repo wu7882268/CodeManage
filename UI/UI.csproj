@@ -64,15 +64,24 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Helpers">
+      <HintPath>..\..\..\Helpers\Helpers\bin\Debug\Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Paginations">
+      <HintPath>..\..\..\..\CSDN下载\Pagination\Pagination\bin\Debug\Paginations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -152,6 +161,9 @@
     <Compile Include="Manage\ManageWindow.xaml.cs">
       <DependentUpon>ManageWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Replenish\GoodsUpdate.xaml.cs">
+      <DependentUpon>GoodsUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Replenish\ReturnAdd.xaml.cs">
       <DependentUpon>ReturnAdd.xaml</DependentUpon>
     </Compile>
@@ -160,6 +172,9 @@
     </Compile>
     <Compile Include="Manage\Replenish\GoodsAdd.xaml.cs">
       <DependentUpon>GoodsAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\TypeUpdate.xaml.cs">
+      <DependentUpon>TypeUpdate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manage\Replenish\TypeAdd.xaml.cs">
       <DependentUpon>TypeAdd.xaml</DependentUpon>
@@ -285,6 +300,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manage\Replenish\GoodsUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Manage\Replenish\ReturnAdd.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -294,6 +313,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Manage\Replenish\GoodsAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Replenish\TypeUpdate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -344,6 +367,10 @@
     <Page Include="ResourceDictionarys\MyResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionarys\MyResourceDictionary3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ResourceDictionarys\MyResourceDictionary2.xaml">
       <SubType>Designer</SubType>

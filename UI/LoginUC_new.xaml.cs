@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BLL;
+using Helpers;
+using Models.Interfaces;
 using Color = System.Drawing.Color;
 using FontStyle = System.Drawing.FontStyle;
 using Pen = System.Drawing.Pen;
@@ -26,6 +30,7 @@ namespace UI
     /// </summary>
     public partial class LoginUC_new : UserControl
     {
+        ILogInBusiness logInBusiness = new LogInBusiness();
         public LoginUC_new()
         {
             InitializeComponent();
@@ -44,11 +49,20 @@ namespace UI
             }
             else
             {
-                LoginWindow.login.Hide();
-                MainWindow main = new MainWindow();
-                main.Show();
-                TextBox_mm.Password = "";
-                TextBox_yzm.Text = "";
+                (bool b, string msg) = logInBusiness.Login(TextBox_id.Text.Trim(), TextBox_mm.Password.Trim());
+                if (b)
+                {
+                    LoginWindow.login.Hide();
+                    MainWindow main = new MainWindow();
+                    main.Show();
+                    TextBox_mm.Password = "";
+                    TextBox_yzm.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show(msg, "错误", MessageBoxButton.OKCancel, MessageBoxImage.Error);
+                    GetImage();
+                }
             }
         }
         private void TextBox_id_GotFocus(object sender, RoutedEventArgs e)

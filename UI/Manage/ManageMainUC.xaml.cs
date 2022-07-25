@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BLL;
+using Models;
 using Models.Delegates;
 using UI.Manage.HomePage;
 using UI.Manage.Information;
@@ -30,6 +32,7 @@ namespace UI.Manage
         public ManageMainUC()
         {
             InitializeComponent();
+            Label_UserName.Content = ApiStatic.UserName;
             Delegates.JumpDelegate = (str =>
             {
                 Type type = Type.GetType(str);

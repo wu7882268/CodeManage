@@ -31,8 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Helpers">
+      <HintPath>..\..\..\Helpers\Helpers\bin\Debug\Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
+    <Compile Include="SupplierBusiness.cs" />
+    <Compile Include="ReturnBusiness.cs" />
+    <Compile Include="ReturnCustomerBusiness.cs" />
+    <Compile Include="ReplenishBusiness.cs" />
+    <Compile Include="OrderBusiness.cs" />
+    <Compile Include="GoodsExtendBusiness.cs" />
+    <Compile Include="TypeBusiness.cs" />
+    <Compile Include="GoodsTypeBusiness.cs" />
+    <Compile Include="LogInBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +67,10 @@
       <Project>{8ab57541-bfb6-4692-a440-a0a2785cb555}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

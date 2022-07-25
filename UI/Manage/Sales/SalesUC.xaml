@@ -113,12 +113,15 @@
                 <DataGrid MaxHeight="657" x:Name="DataGrid_file" Visibility="Visible" HorizontalAlignment="Left" RowHeaderWidth="0" VerticalAlignment="Top" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="序号" Width="3*" Foreground="#393e46" Binding="{Binding id}"/>
-                        <DataGridTextColumn Header="商品名称" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>
+                        <!--<DataGridTextColumn Header="商品名称" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>
                         <DataGridTextColumn Header="销售数量" Width="10*" Foreground="#393e46" Binding="{Binding operateuser}"/>
                         <DataGridTextColumn Header="商品单位" Width=" 5*" Foreground="#393e46" Binding="{Binding description}"/>
                         <DataGridTextColumn Header="销售价格" Width="5*" Foreground="#393e46" Binding="{Binding description}"/>
                         <DataGridTextColumn Header="进货价格" Width=" 5*" Foreground="#393e46" Binding="{Binding description}"/>
-                        <DataGridTextColumn Header="供应商" Width="10*" Foreground="#393e46" Binding="{Binding level}"/>
+                        <DataGridTextColumn Header="供应商" Width="10*" Foreground="#393e46" Binding="{Binding level}"/>-->
+                        <DataGridTextColumn Header="商品名称" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>
+                        <DataGridTextColumn Header="商品数量" Width="10*" Foreground="#393e46" Binding="{Binding operateuser}"/>
+                        <DataGridTextColumn Header="商品单价" Width=" 5*" Foreground="#393e46" Binding="{Binding description}"/>
                         <DataGridTextColumn Header="销售时间" Width="8*" Foreground="#393e46" Binding="{Binding description}"/>
                         <DataGridTemplateColumn Header="操作" Width="10*">
                             <DataGridTemplateColumn.CellTemplate>

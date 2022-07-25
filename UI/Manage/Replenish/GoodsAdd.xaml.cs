@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BLL;
+using Models.Infos.ApiInfo;
+using Models.Interfaces;
 
 namespace UI.Replenish
 {
@@ -20,9 +23,33 @@ namespace UI.Replenish
     /// </summary>
     public partial class GoodsAdd : UserControl
     {
+        ITypeBusiness typeBusiness = new TypeBusiness();
         public GoodsAdd()
         {
             InitializeComponent();
+        }
+
+        private void Button_add_OnClick(object sender, RoutedEventArgs e)
+        {
+            ApiTypeInfo apiTypeInfo = new ApiTypeInfo();
+            apiTypeInfo.name = TextBox_name.Text;
+            apiTypeInfo.describe = TextBox_desc.Text;
+            if (ComboBox_isShow.Text == "是")
+            {
+                apiTypeInfo.display = 1;
+            }
+            else if (ComboBox_isShow.Text == "否")
+            {
+                apiTypeInfo.display = 2;
+            }
+
+            apiTypeInfo.isRequire = 2;
+            apiTypeInfo.timeType = 1;
+            apiTypeInfo.weekStr = new List<string>();
+            apiTypeInfo.sort = 1;
+            apiTypeInfo.type = 2;
+            string str= typeBusiness.Insert(apiTypeInfo);
+            MessageBox.Show(str);
         }
     }
 }

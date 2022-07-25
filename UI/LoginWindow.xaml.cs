@@ -20,6 +20,7 @@ namespace UI
     public partial class LoginWindow : Window
     {
         internal static Window login;
+
         public LoginWindow()
         {
             InitializeComponent();

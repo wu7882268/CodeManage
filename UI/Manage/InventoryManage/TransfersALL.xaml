@@ -53,18 +53,19 @@
             <Grid.OpacityMask>
                 <VisualBrush Visual="{Binding ElementName=maskw}"/>
             </Grid.OpacityMask>
-            <Button x:Name="Button_syb" Content="添加" Foreground="#393e46" Background="#aacfd0" FontSize="18" Height="Auto" Width="Auto" Panel.ZIndex="1" />
+            <Button x:Name="Button_gg" Click="Button_gg_OnClick" Content="更改" Foreground="#393e46" Background="#aacfd0" FontSize="18" Height="Auto" Width="Auto" Panel.ZIndex="1" />
             <Rectangle x:Name="maskw" Fill="#aacfd0" RadiusX="20" RadiusY="20"/>
         </Grid>
-        <Label Foreground="#393e46" Content="仓库名称：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
-        <ComboBox Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="0" SelectedIndex="0" FontSize="16">
+        <!--<Label Foreground="#393e46" Content="仓库名称：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>-->
+        <!--<ComboBox Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="0" SelectedIndex="0" FontSize="16">
             <ComboBoxItem Content="-请选择表结构-" Foreground="#323232" FontSize="16" Height="22"/>
-        </ComboBox>
-        <Label x:Name="Label_mask_t_Copy4" Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="0" Width="19" Grid.Column="2"/>
+        </ComboBox>-->
+        <Label Foreground="#393e46" Content="所属类型：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
+        <TextBox Name="TextBox_type" IsReadOnly="True" CaretBrush="#cccccc" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
         <Label Grid.Row="2" Foreground="#393e46" Content="库存数量：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <Label Grid.Row="1" Foreground="#393e46" Content="商品姓名：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
-        <TextBox CaretBrush="#cccccc" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
-        <TextBox CaretBrush="#cccccc" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
-        <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="1" Width="19" Grid.Column="2"/>
+        <TextBox Name="TextBox_name" IsReadOnly="True"  CaretBrush="#cccccc" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
+        <TextBox Name="TextBox_stock" CaretBrush="#cccccc" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
+        <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="2" Width="19" Grid.Column="2"/>
     </Grid>
 </UserControl>

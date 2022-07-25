@@ -33,6 +33,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,10 +44,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ApiStatic.cs" />
     <Compile Include="Delegates\Delegates.cs" />
+    <Compile Include="Infos\ApiInfo\ApiDeleteInfo.cs" />
+    <Compile Include="Infos\ApiInfo\ApiGoodsTypeAddInfo.cs" />
+    <Compile Include="Infos\ApiInfo\ApiTypeInfo.cs" />
+    <Compile Include="Infos\ApiInfo\ApiGoodsTypeInfo.cs" />
+    <Compile Include="Infos\ApiInfo\ApiLoginInfo.cs" />
+    <Compile Include="Infos\ApiInfo\ApiBaseInfo.cs" />
+    <Compile Include="Infos\SupplierInfo.cs" />
+    <Compile Include="Infos\ReturnCustomerInfo.cs" />
+    <Compile Include="Infos\ReturnInfo.cs" />
+    <Compile Include="Infos\ReplenishInfo.cs" />
+    <Compile Include="Infos\OrderInfo.cs" />
+    <Compile Include="Infos\GoodsExtendInfo.cs" />
     <Compile Include="Infos\SalesUiInfo.cs" />
+    <Compile Include="Interfaces\IReturnCustomerBusiness.cs" />
+    <Compile Include="Interfaces\IReplenishBusiness.cs" />
+    <Compile Include="Interfaces\IOrderBusiness.cs" />
+    <Compile Include="Interfaces\IGoodsExtendBusiness.cs" />
+    <Compile Include="Interfaces\IReturnBusiness.cs" />
+    <Compile Include="Interfaces\ISupplierBusiness.cs" />
+    <Compile Include="Interfaces\ISupplierData.cs" />
+    <Compile Include="Interfaces\IReturnData.cs" />
+    <Compile Include="Interfaces\IReturnCustomerData.cs" />
+    <Compile Include="Interfaces\IReplenishData.cs" />
+    <Compile Include="Interfaces\IOrderData.cs" />
+    <Compile Include="Interfaces\IGoodsExtendData.cs" />
+    <Compile Include="Interfaces\IPcApiDataBase.cs" />
+    <Compile Include="Interfaces\ITypeBusiness.cs" />
+    <Compile Include="Interfaces\ITypeData.cs" />
+    <Compile Include="Interfaces\IGoodsTypeData.cs" />
+    <Compile Include="Interfaces\IGoodsTypeBusiness.cs" />
+    <Compile Include="Interfaces\ILogInBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

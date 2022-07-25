@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Helpers">
+      <HintPath>..\..\..\Helpers\Helpers\bin\Debug\Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,7 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="SupplierData.cs" />
+    <Compile Include="ReturnData.cs" />
+    <Compile Include="ReturnCustomerData.cs" />
+    <Compile Include="ReplenishData.cs" />
+    <Compile Include="OrderData.cs" />
+    <Compile Include="GoodsExtendData.cs" />
+    <Compile Include="TypeData.cs" />
+    <Compile Include="GoodsTypeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
