@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UI.Manage.Information"
              xmlns:view="clr-namespace:Utility.Tool.Controls.View;assembly=Utility.Tool.Controls"
+             xmlns:pagination="clr-namespace:Pagination;assembly=Paginations"
              mc:Ignorable="d" 
       d:DesignHeight="852.2" d:DesignWidth="1621.8">
     <UserControl.Resources>
@@ -56,16 +57,10 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Column="1" Foreground="#393e46"  Content="起始时间：" HorizontalAlignment="Left" Margin="10,0,0,0"   FontSize="20" VerticalContentAlignment="Center" Width="100"/>
                     <Label Grid.Column="2"  Foreground="#393e46"  Content="结束时间：" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="20" VerticalContentAlignment="Center"  Width="100"/>
-                    <view:DateTimePicker Grid.Column="1"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
-                    <view:DateTimePicker Grid.Column="2"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
-                    <Label Grid.Column="3"  Foreground="#393e46"  Content="供应商姓名：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="120" FontSize="20" VerticalContentAlignment="Center"/>
-                    <Label Grid.Column="4"  Foreground="#393e46"  Content="操作结果：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="100" FontSize="20" VerticalContentAlignment="Center"/>
-                    <TextBox Grid.Column="3" Height="26"  HorizontalAlignment="Left" VerticalAlignment="Center" Background="#aacfd0" Foreground="#393e46" Margin="130,0,0,0"  FontSize="18"  Width="150" ></TextBox>
-                    <ComboBox Height="26" Grid.Column="4"  HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
-                        <ComboBoxItem Content="全部" Foreground="#393e46" FontSize="15" Height="22"/>
-                        <ComboBoxItem Content="成功" Foreground="#393e46" FontSize="15" Height="22"/>
-                        <ComboBoxItem Content="失败" Foreground="#393e46" FontSize="15" Height="22"/>
-                    </ComboBox>
+                    <view:DateTimePicker Name="DateTimePicker_start" Grid.Column="1"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
+                    <view:DateTimePicker Name="DateTimePicker_stop" Grid.Column="2"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
+                    <Label Grid.Column="3"  Foreground="#393e46"  Content="供应商名称：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="120" FontSize="20" VerticalContentAlignment="Center"/>
+                    <TextBox Name="TextBox_supplierName" Grid.Column="3" Height="26"  HorizontalAlignment="Left" VerticalAlignment="Center" Background="#aacfd0" Foreground="#393e46" Margin="130,0,0,0"  FontSize="18"  Width="150" ></TextBox>
                     <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="7" Fill="#b9e1dc" RadiusX="20" RadiusY="20" Panel.ZIndex="-1"/>
                 </Grid>
                 <Grid Margin="0,10" Height="59">
@@ -73,13 +68,13 @@
                     <Grid.OpacityMask>
                         <VisualBrush Visual="{Binding ElementName=maskf}"/>
                     </Grid.OpacityMask>
-                    <Label Foreground="#393e46"  Content="共有 0 条数据" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top" Height="37" Width="181" FontSize="20" VerticalContentAlignment="Center"/>
+                    <Label Foreground="#393e46" Name="Label_num"  Content="共有 0 条数据" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top" Height="37" Width="181" FontSize="20" VerticalContentAlignment="Center"/>
                     <Grid Margin="1442,10,14,10"  Width="100" HorizontalAlignment="Right">
                         <!--其他控件-->
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=maskd}"/>
                         </Grid.OpacityMask>
-                        <Button x:Name="button_select" Content="查询" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
+                        <Button x:Name="button_select" Content="查询" Click="Button_select_OnClick"  Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
                         <Rectangle x:Name="maskd" Fill="#79a8a9" RadiusX="20" RadiusY="20"/>
                     </Grid>
                     <Grid Margin="0,10,125,10"  Width="100" HorizontalAlignment="Right">
@@ -92,19 +87,20 @@
 
                     <Rectangle x:Name="maskf" Fill="#aacfd0" RadiusX="20" RadiusY="20" Panel.ZIndex="-1" />
                 </Grid>
-                <DataGrid MaxHeight="657" x:Name="DataGrid_file" Visibility="Visible" HorizontalAlignment="Left" RowHeaderWidth="0" VerticalAlignment="Top" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2">
+                <DataGrid MaxHeight="500" x:Name="DataGrid_file" Loaded="DataGrid_file_OnLoaded"  Visibility="Visible" HorizontalAlignment="Left" RowHeaderWidth="0" VerticalAlignment="Top" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="序号" Width="3*" Foreground="#393e46" Binding="{Binding id}"/>
-                        <DataGridTextColumn Header="供应商ID" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>
-                        <DataGridTextColumn Header="供应商名称" Width="5*" Foreground="#393e46" Binding="{Binding level}"/>
-                        <DataGridTextColumn Header="供应商电话" Width="10*" Foreground="#393e46" Binding="{Binding operateuser}"/>
-                        <DataGridTextColumn Header="供应商地址" Width="10*" Foreground="#393e46" Binding="{Binding description}"/>
+                        <DataGridTextColumn Header="供应商名称" Width="5*" Foreground="#393e46" Binding="{Binding supplierName}"/>
+                        <DataGridTextColumn Header="供应商电话" Width="8*" Foreground="#393e46" Binding="{Binding phone}"/>
+                        <DataGridTextColumn Header="供应商地址" Width="10*" Foreground="#393e46" Binding="{Binding address}"/>
+                        <DataGridTextColumn Header="添加时间" Width="10*" Foreground="#393e46" Binding="{Binding createTime}"/>
+                        <DataGridTextColumn Header="备注" Width="12*" Foreground="#393e46" Binding="{Binding note}"/>
                         <DataGridTemplateColumn Header="操作" Width="10*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Button Content="更改" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
-                                        <Button Content="删除" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
+                                        <Button Content="更改" Click="Button_update_OnClick"  Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
+                                        <Button Content="删除" Click="Button_delete_OnClick" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -112,6 +108,26 @@
 
                     </DataGrid.Columns>
                 </DataGrid>
+                <pagination:Pagination x:Name="pg" 
+                                       PropertyChanged="Pg_OnPropertyChanged"
+                                       TotalDataCount="255" Margin="0,10"
+                                       Width="557"
+                                       HorizontalAlignment="Right"
+                                       IsShowPageInfo="True"
+                                       MaxShownPageCount="5"
+                                       IsShowPageDataCountSelector="True"
+                                       SelectedPageBackground="#9abfd0"
+                                       PageSelectorBackground="#b9e1dc"
+                                       ButtonBackground="Blue">
+                    <pagination:Pagination.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <ResourceDictionary Source="/ResourceDictionarys/MyResourceDictionary3.xaml"/>
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </pagination:Pagination.Resources>
+                </pagination:Pagination>
+
             </StackPanel>
         </Grid>
     </Grid>

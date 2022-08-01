@@ -87,6 +87,7 @@ namespace UI.Manage.InventoryManage
             {
                 list = list.Where((info => int.Parse(info.typePid) == typeId)).ToList();
             }
+            pg.TotalDataCount = list.Count;
             return list;
         }
         private void Button_select_OnClick(object sender, RoutedEventArgs e)

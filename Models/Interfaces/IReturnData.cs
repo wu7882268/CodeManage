@@ -9,7 +9,7 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 退货信息数据接口
     /// </summary>
    public  interface IReturnData : IPcApiDataBase<ReturnInfo>
     {

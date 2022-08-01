@@ -56,9 +56,9 @@
             <Button x:Name="Button_syb" Content="添加" Foreground="#393e46" Background="#aacfd0" FontSize="18" Height="Auto" Width="Auto" Panel.ZIndex="1" />
             <Rectangle x:Name="maskw" Fill="#aacfd0" RadiusX="20" RadiusY="20"/>
         </Grid>
-        <Label Foreground="#393e46" Content="商品类型：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
+        <Label Foreground="#393e46" Content="商品名称：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <ComboBox Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="0" SelectedIndex="0" FontSize="16">
-            <ComboBoxItem Content="-请选择商品类型-" Foreground="#323232" FontSize="16" Height="22"/>
+            <ComboBoxItem Content="-请选择商品-" Foreground="#323232" FontSize="16" Height="22"/>
         </ComboBox>
         <Label Foreground="#393e46" Content="备注：" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="8" Width="163" HorizontalContentAlignment="Right"/>
         <TextBox CaretBrush="#cccccc" x:Name="TextBox_ip_Copy7" HorizontalAlignment="Left" Height="136" Margin="11,10,0,0" VerticalAlignment="Top" Width="426" BorderBrush="{x:Null}" FontSize="18" Foreground="#393e46"  MinHeight="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsTab="True" AcceptsReturn="True" Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="1"/>

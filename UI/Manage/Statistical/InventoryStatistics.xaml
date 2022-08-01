@@ -15,107 +15,106 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Viewbox>
-        <Grid Height="964" Width="1620">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="181*"/>
-                <ColumnDefinition Width="359*"/>
-            </Grid.ColumnDefinitions>
-            <!--<Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="359*"/>
+        </Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>-->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.8*"/>
-                <RowDefinition Height="10*"/>
-            </Grid.RowDefinitions>
-            <!--<Button Name="wlsz" Content="网络设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource BtnInfoStyle}" FontSize="16" Click="Wlsz_Click" Panel.ZIndex="1" Height="30" Width="104" Margin="301,5,0,0"/>-->
-            <Grid Margin="10,10,392.099,0"  Grid.Column="0" Grid.Row="0">
-                <!--其他控件-->
-                <Grid.OpacityMask>
-                    <VisualBrush Visual="{Binding ElementName=mask}"/>
-                </Grid.OpacityMask>
-                <Button x:Name="Button_file" IsEnabled="False" Content="库存统计" Style="{DynamicResource BtnInfoStyle}" FontSize="18" Panel.ZIndex="1" Width="Auto" Height="Auto" Margin="0,0,0,-0.8"/>
-                <Rectangle Name="mask" Fill="#79a8a9" RadiusX="20" RadiusY="20"/>
-            </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <!--<Button Name="wlsz" Content="网络设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource BtnInfoStyle}" FontSize="16" Click="Wlsz_Click" Panel.ZIndex="1" Height="30" Width="104" Margin="301,5,0,0"/>-->
+        <Grid Margin="10,10,0,0" HorizontalAlignment="Left" Width="120"  Grid.Column="0" Grid.Row="0">
+            <!--其他控件-->
+            <Grid.OpacityMask>
+                <VisualBrush Visual="{Binding ElementName=maska}"/>
+            </Grid.OpacityMask>
+            <Button x:Name="Button_file" IsEnabled="False" Content="库存统计" Style="{DynamicResource BtnInfoStyle}" FontSize="18" Panel.ZIndex="1" Width="Auto" Height="Auto" Margin="0,0,0,-0.8"/>
+            <Rectangle x:Name="maska" Fill="#FF9194bd" RadiusX="20" RadiusY="20"/>
+        </Grid>
 
-            <Grid Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="137*"/>
-                    <RowDefinition Height="756*"/>
-                </Grid.RowDefinitions>
-                <StackPanel Margin="10,10,10,0" Orientation="Vertical" Grid.RowSpan="2">
-                    <Grid Height="80" Margin="0,0,-0.4,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                            <ColumnDefinition Width="5*"></ColumnDefinition>
-                            <ColumnDefinition Width="5*"></ColumnDefinition>
-                            <ColumnDefinition Width="5*"></ColumnDefinition>
-                            <ColumnDefinition Width="5*"></ColumnDefinition>
-                            <ColumnDefinition Width="5*"></ColumnDefinition>
-                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="5*"></RowDefinition>
-                            <RowDefinition Height="5*"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Label Grid.Column="1" Foreground="#393e46"  Content="起始时间：" HorizontalAlignment="Left" Margin="10,0,0,0"   FontSize="20" VerticalContentAlignment="Center" Width="100"/>
-                        <Label Grid.Column="2"  Foreground="#393e46"  Content="结束时间：" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="20" VerticalContentAlignment="Center"  Width="100"/>
-                        <view:DateTimePicker Grid.Column="1"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
-                        <view:DateTimePicker Grid.Column="2"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
-                        <Label Grid.Column="3"  Foreground="#393e46"  Content="仓库类型：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="100" FontSize="20" VerticalContentAlignment="Center"/>
-                        <ComboBox Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
-                        </ComboBox>
-                        <Label Grid.Column="4"  Foreground="#393e46"  Content="商品类型：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="100" FontSize="20" VerticalContentAlignment="Center"/>
-                        <ComboBox Grid.Column="4"  HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
-                        </ComboBox>
-                        <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="7" Fill="#b9e1dc" RadiusX="20" RadiusY="20" Panel.ZIndex="-1"/>
-                    </Grid>
-                    <Grid Margin="0,10" Height="59">
+        <Grid Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="137*"/>
+                <RowDefinition Height="756*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="10,10,10,0" Orientation="Vertical" Grid.RowSpan="2">
+                <Grid Height="80" Margin="0,0,-0.4,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="1" Foreground="#393e46"  Content="起始时间：" HorizontalAlignment="Left" Margin="10,0,0,0"   FontSize="20" VerticalContentAlignment="Center" Width="100"/>
+                    <Label Grid.Column="2"  Foreground="#393e46"  Content="结束时间：" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="20" VerticalContentAlignment="Center"  Width="100"/>
+                    <view:DateTimePicker Grid.Column="1"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
+                    <view:DateTimePicker Grid.Column="2"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
+                    <Label Grid.Column="3"  Foreground="#393e46"  Content="仓库类型：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="100" FontSize="20" VerticalContentAlignment="Center"/>
+                    <ComboBox Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
+                    </ComboBox>
+                    <Label Grid.Column="4"  Foreground="#393e46"  Content="商品类型：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="100" FontSize="20" VerticalContentAlignment="Center"/>
+                    <ComboBox Grid.Column="4"  HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
+                    </ComboBox>
+                    <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="7" Fill="#b9e1dc" RadiusX="20" RadiusY="20" Panel.ZIndex="-1"/>
+                </Grid>
+                <Grid Margin="0,10" Height="59">
+                    <!--其他控件-->
+                    <Grid.OpacityMask>
+                        <VisualBrush Visual="{Binding ElementName=maskf}"/>
+                    </Grid.OpacityMask>
+                    <StackPanel Orientation="Horizontal" >
+                        <Label Foreground="#393e46"  Content="入库数量:" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="40,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="出库数量:" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="进货金额" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="￥0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="元" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="进货金额" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="￥0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="元" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                    <Grid Margin="1442,10,14,10"  Width="100" HorizontalAlignment="Right">
                         <!--其他控件-->
                         <Grid.OpacityMask>
-                            <VisualBrush Visual="{Binding ElementName=maskf}"/>
+                            <VisualBrush Visual="{Binding ElementName=maskd}"/>
                         </Grid.OpacityMask>
-                        <StackPanel Orientation="Horizontal" >
-                            <Label Foreground="#393e46"  Content="入库数量:" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="40,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="出库数量:" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="进货金额" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="￥0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="元" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="进货金额" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="￥0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
-                            <Label Foreground="#393e46"  Content="元" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                        </StackPanel>
-                        <Grid Margin="1442,10,14,10"  Width="100" HorizontalAlignment="Right">
-                            <!--其他控件-->
-                            <Grid.OpacityMask>
-                                <VisualBrush Visual="{Binding ElementName=maskd}"/>
-                            </Grid.OpacityMask>
-                            <Button x:Name="button_select" Content="查询" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
-                            <Rectangle x:Name="maskd" Fill="#79a8a9" RadiusX="20" RadiusY="20"/>
-                        </Grid>
-                        <Rectangle x:Name="maskf" Fill="#aacfd0" RadiusX="20" RadiusY="20" Panel.ZIndex="-1" />
+                        <Button x:Name="button_select" Content="查询" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
+                        <Rectangle x:Name="maskd" Fill="#79a8a9" RadiusX="20" RadiusY="20"/>
                     </Grid>
-                    <Grid>
-                        <lvc:CartesianChart Series="{Binding SeriesCollection}" Foreground="#393e46" FontSize="15" LegendLocation="Left" Panel.ZIndex="1" Margin="10,10,400,10" Height="730">
-                            <lvc:CartesianChart.AxisX>
-                                <!--Labels 为图形标签数据-->
-                                <lvc:Axis Unit="1"  Foreground="#393e46" Labels="{Binding Labels}"/>
-                            </lvc:CartesianChart.AxisX>
-                            <lvc:CartesianChart.AxisY>
-                                <!--Formatter 为Y轴单位-->
-                                <lvc:Axis Name="Axis_y" Unit="1"  Foreground="#393e46" LabelFormatter="{Binding Formatter}"/>
-                            </lvc:CartesianChart.AxisY>
-                        </lvc:CartesianChart>
-                        <lvc:PieChart Height="340" Series="{Binding SeriesCollection1}" InnerRadius="100" Foreground="#393e46" FontSize="8" LegendLocation="Left" Panel.ZIndex="1" Margin="1200,10,54,400"/>
-                        <Label Content="库存统计" Foreground="#393e46" FontSize="30" Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1358,150,0,0"/>
-                        <lvc:PieChart Height="340"  Series="{Binding SeriesCollection1}" InnerRadius="100" Foreground="#393e46" FontSize="8" LegendLocation="Left" Panel.ZIndex="1" Margin="1200,355,54,55"/>
-                        <Label Content="商品统计" Foreground="#393e46" FontSize="30" Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1356,500,0,0"/>
-                    </Grid>
-                </StackPanel>
-            </Grid>
+                    <Rectangle x:Name="maskf" Fill="#aacfd0" RadiusX="20" RadiusY="20" Panel.ZIndex="-1" />
+                </Grid>
+                <Grid Height="623">
+                    <lvc:CartesianChart Series="{Binding SeriesCollection}" Foreground="#393e46" FontSize="15" LegendLocation="Left" Panel.ZIndex="1" Margin="10,10,400,10" >
+                        <lvc:CartesianChart.AxisX>
+                            <!--Labels 为图形标签数据-->
+                            <lvc:Axis Unit="1"  Foreground="#393e46" Labels="{Binding Labels}"/>
+                        </lvc:CartesianChart.AxisX>
+                        <lvc:CartesianChart.AxisY>
+                            <!--Formatter 为Y轴单位-->
+                            <lvc:Axis Name="Axis_y" Unit="1"  Foreground="#393e46" LabelFormatter="{Binding Formatter}"/>
+                        </lvc:CartesianChart.AxisY>
+                    </lvc:CartesianChart>
+                    <lvc:PieChart Height="265" Width="348" Series="{Binding SeriesCollection1}" InnerRadius="100" Foreground="#393e46" FontSize="8" LegendLocation="Left" Panel.ZIndex="1" Margin="1200,10,54,348"/>
+                    <Label Content="库存统计" Foreground="#393e46" FontSize="30" Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1358,120,0,0"/>
+                    <lvc:PieChart Height="265" Width="348"  Series="{Binding SeriesCollection1}" InnerRadius="100" Foreground="#393e46" FontSize="8" LegendLocation="Left" Panel.ZIndex="1" Margin="1200,300,54,0"/>
+                    <Label Content="商品统计" Foreground="#393e46" FontSize="30" Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1356,440,0,0"/>
+                </Grid>
+            </StackPanel>
         </Grid>
-    </Viewbox>
+    </Grid>
+
 </UserControl>

@@ -9,9 +9,11 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 订单业务接口
     /// </summary>
    public  interface IOrderBusiness : IOrderData
     {
+        List<OrderInfo> GetList(string goodsName, int typeId, string startTime, string stopTime);
+        bool IsCheck(out string msg);
     }
 }

@@ -15,5 +15,6 @@ namespace Models
 
         public static string ApiUrl = "http://test.jilinyx.com/index.php/";
         public static string UserName = "高级管理员";
+        public static int UserId = 0;
     }
 }

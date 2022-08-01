@@ -209,6 +209,7 @@
     <Compile Include="Manage\Statistical\SalesStatistics.xaml.cs">
       <DependentUpon>SalesStatistics.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\GoodsUiInfo.cs" />
     <Compile Include="StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
@@ -516,5 +517,6 @@
     <Content Include="DLL\Utility.Tool.Controls.dll" />
     <Content Include="DLL\Utility.Tool.Controls.pdb" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

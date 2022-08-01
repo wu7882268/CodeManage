@@ -9,7 +9,7 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 订单数据接口
     /// </summary>
    public  interface IOrderData : IPcApiDataBase<OrderInfo>
     {

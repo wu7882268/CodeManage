@@ -35,12 +35,16 @@
         </Grid>
 
         <Grid Background="#79a8a9" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="756*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
-            <Grid Margin="10,10,10,0">
+            <Grid Margin="10,10,9.6,65.2" Grid.ColumnSpan="2" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
@@ -49,7 +53,7 @@
                     <RowDefinition Height="5*"></RowDefinition>
                 </Grid.RowDefinitions>
             </Grid>
-            <StackPanel Margin="10,10,10,0" Orientation="Vertical" Grid.RowSpan="4">
+            <StackPanel Margin="10,10,9.6,-0.2" Orientation="Vertical" Grid.RowSpan="3" Grid.ColumnSpan="2">
                 <Grid Height="80" Margin="0,0,-0.4,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1.5*"></ColumnDefinition>
@@ -116,7 +120,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Button Content="详情" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
+                                        <!--<Button Content="详情" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>-->
                                         <Button Name="Button_update" Click="Button_update_OnClick"  Content="更改" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
                                         <Button Name="Button_delete" Click="Button_delete_OnClick" Content="删除" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
                                     </StackPanel>

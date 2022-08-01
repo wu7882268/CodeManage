@@ -13,8 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BLL;
+using Models.Infos;
 using Models.Infos.ApiInfo;
 using Models.Interfaces;
+using UI.Models;
 
 namespace UI.Replenish
 {
@@ -24,20 +26,24 @@ namespace UI.Replenish
     public partial class TypeUpdate : UserControl
     {
         private ApiGoodsTypeAddInfo apiGoodsTypeAddInfo;
+        private GoodsUiInfo goodsUiInfo;
         ITypeBusiness typeBusiness = new TypeBusiness();
         IGoodsTypeBusiness goodsTypeBusiness = new GoodsTypeBusiness();
-
-        public TypeUpdate(ApiGoodsTypeInfo apiGoods)
+        IGoodsExtendBusiness goodsExtendBusiness = new GoodsExtendBusiness();
+        public TypeUpdate(GoodsUiInfo goodsUiInfo)
         {
             InitializeComponent();
             //this.apiGoodsTypeAddInfo = apiGoodsTypeAddInfo;
-            apiGoodsTypeAddInfo = goodsTypeBusiness.GetAddId(apiGoods.id);
+            apiGoodsTypeAddInfo = goodsTypeBusiness.GetAddId(goodsUiInfo.id);
             TextBox_name.Text = apiGoodsTypeAddInfo.name;
             TextBox_barCode.Text = apiGoodsTypeAddInfo.barCode;
             TextBox_price.Text = apiGoodsTypeAddInfo.price.ToString();
             TextBox_unit.Text = apiGoodsTypeAddInfo.unit;
             TextBox_details.Text = apiGoodsTypeAddInfo.details;
             TextBox_costPrice.Text = apiGoodsTypeAddInfo.costPrice.ToString();
+            TextBox_inventoryAlert.Text = goodsUiInfo.inventoryAlert;
+            TextBox_shelfLife.Text = goodsUiInfo.shelfLife.ToString();
+            this.goodsUiInfo = goodsUiInfo;
         }
 
         private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)
@@ -77,7 +83,13 @@ namespace UI.Replenish
                 types.Add(obj.id);
                 addInfo.typeId = types;
             }
-
+            GoodsExtendInfo goodsExtendInfo = new GoodsExtendInfo();
+            //goodsExtendInfo.createTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            goodsExtendInfo.goodsId = apiGoodsTypeAddInfo.id;
+            goodsExtendInfo.inventoryAlert = TextBox_inventoryAlert.Text.Trim();
+            goodsExtendInfo.shelfLife = int.Parse(TextBox_shelfLife.Text.Trim());
+            goodsExtendInfo.id = goodsUiInfo.bid;
+            goodsExtendBusiness.Save(goodsExtendInfo);
             MessageBox.Show(goodsTypeBusiness.Insert(addInfo));
 
         }

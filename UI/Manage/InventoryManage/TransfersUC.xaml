@@ -92,7 +92,7 @@
                     </Grid>-->
                     <Rectangle x:Name="maskf" Fill="#aacfd0" RadiusX="20" RadiusY="20" Panel.ZIndex="-1" />
                 </Grid>
-                <DataGrid MaxHeight="657" x:Name="DataGrid_file" Loaded="DataGrid_file_OnLoaded" Visibility="Visible" HorizontalAlignment="Left" RowHeaderWidth="0" VerticalAlignment="Top" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2">
+                <DataGrid MaxHeight="500" x:Name="DataGrid_file" Loaded="DataGrid_file_OnLoaded" Visibility="Visible" HorizontalAlignment="Left" RowHeaderWidth="0" VerticalAlignment="Top" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="序号" Width="3*" Foreground="#393e46" Binding="{Binding id}"/>
                         <!--<DataGridTextColumn Header="仓库名称" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>-->

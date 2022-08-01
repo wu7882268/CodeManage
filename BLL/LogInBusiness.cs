@@ -25,6 +25,7 @@ namespace BLL
             {
                 ApiStatic.PHPSESSID = ssid;
                 ApiStatic.UserName = apiMsg.data.userName;
+                ApiStatic.UserId = apiMsg.data.id;
                 return (true,apiMsg.msg);
             }
             else

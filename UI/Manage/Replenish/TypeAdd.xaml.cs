@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BLL;
+using Models.Infos;
 using Models.Infos.ApiInfo;
 using Models.Interfaces;
 
@@ -29,6 +30,7 @@ namespace UI.Replenish
         }
         ITypeBusiness typeBusiness = new TypeBusiness();
         IGoodsTypeBusiness goodsTypeBusiness = new GoodsTypeBusiness();
+        GoodsExtendBusiness goodsExtendBusiness = new GoodsExtendBusiness();
         private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)
         {
             var list = typeBusiness.GetAll();
@@ -65,8 +67,18 @@ namespace UI.Replenish
                 types.Add(obj.id);
                 addInfo.typeId = types;
             }
+            string msg = goodsTypeBusiness.Insert(addInfo);
+            var goods =  goodsTypeBusiness.GetAll().Where((info =>
+                info.name == addInfo.name && info.barCode == addInfo.barCode && info.barCode == addInfo.barCode &&
+                info.unit == addInfo.unit)).Last();
+            GoodsExtendInfo goodsExtendInfo = new GoodsExtendInfo();
+            goodsExtendInfo.createTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            goodsExtendInfo.goodsId = goods.id;
+            goodsExtendInfo.inventoryAlert = TextBox_inventoryAlert.Text.Trim();
+            goodsExtendInfo.shelfLife = int.Parse(TextBox_shelfLife.Text.Trim());
+            goodsExtendBusiness.Save(goodsExtendInfo);
+            MessageBox.Show(msg);
 
-            goodsTypeBusiness.Insert(addInfo);
         }
     }
 }

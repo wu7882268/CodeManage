@@ -56,27 +56,27 @@
             <Button x:Name="Button_syb" Content="添加" Foreground="#393e46" Background="#aacfd0" FontSize="18" Height="Auto" Width="Auto" Panel.ZIndex="1" />
             <Rectangle x:Name="maskw" Fill="#aacfd0" RadiusX="20" RadiusY="20"/>
         </Grid>
-        <Label Foreground="#393e46" Content="商品类型：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
+        <Label Foreground="#393e46" Content="商品名称：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <ComboBox Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="0" SelectedIndex="0" FontSize="16">
-            <ComboBoxItem Content="-请选择商品类型-" Foreground="#323232" FontSize="16" Height="22"/>
+            <ComboBoxItem Content="-请选择商品-" Foreground="#323232" FontSize="16" Height="22"/>
         </ComboBox>
         <Label Foreground="#393e46" Content="退货原因：" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="6" Width="163" HorizontalContentAlignment="Right"/>
         <TextBox CaretBrush="#cccccc" x:Name="TextBox_ip_Copy7" HorizontalAlignment="Left" Height="136" Margin="11,10,0,0" VerticalAlignment="Top" Width="426" BorderBrush="{x:Null}" FontSize="18" Foreground="#393e46"  MinHeight="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsTab="True" AcceptsReturn="True" Grid.Row="6" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="1"/>
         <Label x:Name="Label_mask_t_Copy4" Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="0" Width="19" Grid.Column="2"/>
         <Label Grid.Row="2" Foreground="#393e46" Content="是否返还商品：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
-        <Label Grid.Row="3" Foreground="#393e46" Content="返回仓库：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
+        <Label Grid.Row="3" Foreground="#393e46" Content="返回单价：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <Label Grid.Row="4" Foreground="#393e46" Content="退货数量：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <Label Grid.Row="5" Foreground="#393e46" Content="退还价格：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <Label Grid.Row="1" Foreground="#393e46" Content="退货时间：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <view:DateTimePicker  Grid.Row="1" Grid.Column="1" Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="11,10,0,0"  VerticalAlignment="Center" Width="300"/>
-        <ComboBox Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="3" SelectedIndex="0" FontSize="16">
-            <ComboBoxItem Content="-请选择仓库-" Foreground="#323232" FontSize="16" Height="22"/>
-        </ComboBox>
         <ComboBox Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="2" SelectedIndex="0" FontSize="16">
             <ComboBoxItem Content="-请选择是否退还-" Foreground="#323232" FontSize="16" Height="22"/>
+            <ComboBoxItem Content="是" Foreground="#323232" FontSize="16" Height="22"/>
+            <ComboBoxItem Content="否" Foreground="#323232" FontSize="16" Height="22"/>
         </ComboBox>
         <TextBox CaretBrush="#cccccc" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
         <TextBox CaretBrush="#cccccc" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
+        <TextBox CaretBrush="#cccccc" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
         <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="1" Width="19" Grid.Column="2"/>
         <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="3" Width="19" Grid.Column="2"/>
         <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="4" Width="19" Grid.Column="2"/>

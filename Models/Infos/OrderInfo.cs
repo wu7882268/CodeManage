@@ -32,12 +32,24 @@ namespace Models.Infos
         /// </summary>
         public double money { get; set; }
         /// <summary>
+        /// 商品总价
+        /// </summary>
+        public double totalPrice { get; set; }
+        /// <summary>
         /// 商品数量
         /// </summary>
         public int num { get; set; }
         /// <summary>
+        /// 商品单位
+        /// </summary>
+        public string unit { get; set; }
+        /// <summary>
         /// 创建时间
         /// </summary>
         public string createTime { get; set; }
+        /// <summary>
+        /// 商备注
+        /// </summary>
+        public string note { get; set; }
     }
 }

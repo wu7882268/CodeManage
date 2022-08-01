@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BLL;
+using Helpers;
 using Models.Delegates;
+using Models.Infos;
+using Models.Infos.ApiInfo;
+using Models.Interfaces;
 
 namespace UI.Manage.Information
 {
@@ -25,10 +31,74 @@ namespace UI.Manage.Information
         {
             InitializeComponent();
         }
+        ISupplierBusiness supplierBusiness = new SupplierBusiness();
+
+        private string supplierName = "";
+        private string startTime = "";
+        private string stopTime = "";
 
         private void Button_add_OnClick(object sender, RoutedEventArgs e)
         {
             Delegates.JumpDelegate("UI.Manage.Information.SupplierAdd");
         }
+        private void DataGrid_file_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            var list = GetList();
+            //DataGrid_file.DataContext = list.SubList(0, 10);
+            //pg.TotalDataCount = list.Count;
+        }
+
+        private void Pg_OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            var list = GetList();
+
+        }
+        private void Button_update_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (DataGrid_file.SelectedItem is SupplierInfo supplierInfo)
+            {
+                //Delegates.JumpDelegateObj("UI.Replenish.TypeUpdate", supplierInfo);
+            }
+        }
+
+        private void Button_delete_OnClick(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult message = MessageBox.Show("您确定要删除吗", "提示", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            if (message == MessageBoxResult.Yes)
+            {
+                if (DataGrid_file.SelectedItem is SupplierInfo supplierInfo)
+                {
+                    MessageBox.Show(supplierBusiness.Delete(supplierInfo));
+                    var list = GetList();
+                }
+            }
+        }
+
+        private List<SupplierInfo> GetList()
+        {
+            var list = supplierBusiness.GetList(supplierName, startTime, stopTime);
+            if (pg != null)
+                pg.TotalDataCount = list.Count;
+            if (Label_num != null)
+                Label_num.Content = $"{list.Count}";
+            if (pg.CurrentPageNumber <= 1)
+            {
+                DataGrid_file.DataContext = list.SubList(0, pg.PageDataCount);
+            }
+            else
+            {
+                DataGrid_file.DataContext = list.SubList((pg.CurrentPageNumber - 1) * pg.PageDataCount, pg.PageDataCount);
+            }
+            return list;
+        }
+
+        private void Button_select_OnClick(object sender, RoutedEventArgs e)
+        {
+            supplierName = TextBox_supplierName.Text.Trim();
+            startTime = DateTimePicker_start.DateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            stopTime = DateTimePicker_stop.DateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            var list = GetList();
+        }
+
     }
 }

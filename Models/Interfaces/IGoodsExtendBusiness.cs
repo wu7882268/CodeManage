@@ -9,7 +9,7 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 商品扩展业务接口
     /// </summary>
    public  interface IGoodsExtendBusiness : IGoodsExtendData
     {

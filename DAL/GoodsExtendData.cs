@@ -16,17 +16,18 @@ namespace DAL
     {
         public List<GoodsExtendInfo> GetAll()
         {
-            throw new NotImplementedException();
+            List<GoodsExtendInfo> list = new List<GoodsExtendInfo>();
+            return list;
         }
 
         public string Save(GoodsExtendInfo info)
         {
-            throw new NotImplementedException();
+            return "";
         }
 
         public string Delete(GoodsExtendInfo info)
         {
-            throw new NotImplementedException();
+            return "";
         }
     }
 }

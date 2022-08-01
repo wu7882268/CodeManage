@@ -8,7 +8,7 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 商品类型业务接口
     /// </summary>
    public  interface ITypeBusiness : ITypeData
     {

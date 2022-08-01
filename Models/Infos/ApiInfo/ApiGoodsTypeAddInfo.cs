@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Models.Infos.ApiInfo
 {
     /// <summary>
-    /// api商品类型插入模板
+    /// api商品插入模板
     /// </summary>
     public class ApiGoodsTypeAddInfo: ApiGoodsTypeInfo
     {

@@ -9,9 +9,11 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 送货信息业务接口
     /// </summary>
    public  interface IReplenishBusiness : IReplenishData
     {
+        List<ReplenishInfo> GetList(string goodsName, string supplierName, int typeId, string startTime, string stopTime);
+        bool IsCheck(out string msg);
     }
 }

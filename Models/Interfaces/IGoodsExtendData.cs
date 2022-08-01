@@ -9,9 +9,9 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 商品扩展数据接口
     /// </summary>
-   public  interface IGoodsExtendData:IPcApiDataBase<GoodsExtendInfo>
+    public interface IGoodsExtendData:IPcApiDataBase<GoodsExtendInfo>
     {
     }
 }

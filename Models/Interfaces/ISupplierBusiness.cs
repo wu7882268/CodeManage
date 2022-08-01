@@ -9,9 +9,11 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 供应商业务接口
     /// </summary>
    public  interface ISupplierBusiness : ISupplierData
     {
+        List<SupplierInfo> GetList(string supplierName, string startTime, string stopTime);
+        bool IsCheck(out string msg);
     }
 }

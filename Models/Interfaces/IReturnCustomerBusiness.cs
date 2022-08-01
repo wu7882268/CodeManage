@@ -9,9 +9,11 @@ using Models.Infos.ApiInfo;
 namespace Models.Interfaces
 {
     /// <summary>
-    /// 登录业务接口
+    /// 顾客退货业务接口
     /// </summary>
    public  interface IReturnCustomerBusiness : IReturnCustomerData
     {
+        List<ReturnCustomerInfo> GetList(string goodsName, int typeId, string startTime, string stopTime);
+        bool IsCheck(out string msg);
     }
 }
