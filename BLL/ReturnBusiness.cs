@@ -17,6 +17,7 @@ namespace BLL
     {
         IReturnData returnData = new ReturnData();
         IGoodsTypeBusiness goodsTypeBusiness = new GoodsTypeBusiness();
+
         public List<ReturnInfo> GetAll()
         {
             return returnData.GetAll();
