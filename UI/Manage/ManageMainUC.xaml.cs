@@ -128,34 +128,34 @@ namespace UI.Manage
         }
         private void SamplenoSource_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (samplenoSource.SelectedItem == ComboBoxItem_grxx)
-            {
-                ContentControl_main.Content = null;
-                //ContentControlsub.Content = new Frame()
-                //{
+            //if (samplenoSource.SelectedItem == ComboBoxItem_grxx)
+            //{
+            //    ContentControl_main.Content = null;
+            //    //ContentControlsub.Content = new Frame()
+            //    //{
 
-                //    Content = new Personal()
-                //};
-            }
-            else if (samplenoSource.SelectedItem == ComboBoxItem_xgmm)
-            {
-                ContentControl_main.Content = null;
-                //ContentControlsub.Content = new Frame()
-                //{
+            //    //    Content = new Personal()
+            //    //};
+            //}
+            //else if (samplenoSource.SelectedItem == ComboBoxItem_xgmm)
+            //{
+            //    ContentControl_main.Content = null;
+            //    //ContentControlsub.Content = new Frame()
+            //    //{
 
-                //    Content = new password()
-                //};
-            }
-            else if (samplenoSource.SelectedItem == ComboBoxItem_bbxx)
-            {
-                ContentControl_main.Content = null;
-                //ContentControlsub.Content = new Frame()
-                //{
+            //    //    Content = new password()
+            //    //};
+            //}
+            //else if (samplenoSource.SelectedItem == ComboBoxItem_bbxx)
+            //{
+            //    ContentControl_main.Content = null;
+            //    //ContentControlsub.Content = new Frame()
+            //    //{
 
-                //    Content = new version()
-                //};
-            }
-            else if (samplenoSource.SelectedItem == ComboBoxItem_aqtc)
+            //    //    Content = new version()
+            //    //};
+            //}
+            if (samplenoSource.SelectedItem == ComboBoxItem_aqtc)
             {
                 ManageWindow.manageWindow.Close();
             }

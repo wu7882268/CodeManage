@@ -7,6 +7,7 @@ using DAL;
 using Models.Infos;
 using Models.Infos.ApiInfo;
 using Models.Interfaces;
+using Tools;
 
 namespace BLL
 {
@@ -23,11 +24,10 @@ namespace BLL
             return goodsTypeData.Insert(goodsTypeAddInfo);
         }
 
-        public string Delete(ApiGoodsTypeInfo   goodsTypeAddInfo)
+        public string Delete(ApiGoodsTypeAddInfo goodsTypeAddInfo)
         {
             return goodsTypeData.Delete(goodsTypeAddInfo);
         }
-
         public ApiGoodsTypeAddInfo GetAddId(int id)
         {
             return goodsTypeData.GetAddId(id);
@@ -51,6 +51,17 @@ namespace BLL
         public bool IsCheck(out string msg)
         {
             throw new NotImplementedException();
+        }
+
+        public string UpdateStock(int id,int number)
+        {
+
+            ApiGoodsTypeAddInfo apiGoodsTypeAddInfo = GetAddId(id);
+            InfoHelper.InitializeString(apiGoodsTypeAddInfo);
+            InfoHelper.InitializeDoubleNull(apiGoodsTypeAddInfo);
+            InfoHelper.InitializeIntNull(apiGoodsTypeAddInfo);
+            apiGoodsTypeAddInfo.stock += number;
+            return Insert(apiGoodsTypeAddInfo);
         }
     }
 }

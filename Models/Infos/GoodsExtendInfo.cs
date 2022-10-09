@@ -26,7 +26,12 @@ namespace Models.Infos
         /// <summary>
         /// 库存下限
         /// </summary>
-        public string inventoryAlert { get; set; }
+        public int inventoryAlert { get; set; }
+
+        /// <summary>
+        /// 商品备注
+        /// </summary>
+        public string note { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>

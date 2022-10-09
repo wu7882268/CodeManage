@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
              xmlns:local="clr-namespace:UI.Cashier"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1914">
@@ -28,15 +29,12 @@
             <Rectangle Stroke="Black" Grid.ColumnSpan="3"  StrokeThickness="1.5" 
                        StrokeDashArray="5 5" SnapsToDevicePixels="True" RadiusX="2" RadiusY="2"/>
             <Label Content="扫码条/键入编号：" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="26" Foreground="#323232" Margin="50,0,0,0"/>
-            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" Style="{DynamicResource TextBoxStyle}"  Grid.Column="1" Margin="0,18" FontSize="22" >
-            </TextBox>
+            <TextBox Name="TextBox_tm" KeyDown="TextBox_tm_OnKeyDown" BorderBrush="#e7e6e1" Background="#f7fbfc" Style="{DynamicResource TextBoxStyle}"  Grid.Column="1" Margin="0,18" FontSize="22"  />
             <StackPanel Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="扫码自动添加" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
+                <Button Name="Button_autoAdd" Click="Button_autoAdd_OnClick" Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="扫码自动添加" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0"/>
                 <Label Content="数量:" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Foreground="#323232" Margin="10,0,0,0"/>
-                <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" Width="200" Style="{DynamicResource TextBoxStyle}"  Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,2" FontSize="22" >
-                </TextBox>
-                <Button Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" Content="手动添加" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-
+                <TextBox  Name="TextBox_num" Text="1" BorderBrush="#e7e6e1" Background="#f7fbfc" Width="200" PreviewTextInput="TextBox_num_OnPreviewTextInput" Style="{DynamicResource TextBoxStyle}"  Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,2" FontSize="22" input:InputMethod.IsInputMethodEnabled="False"/>
+                <Button Click="Button_add_OnClick" Name="Button_add" Background="#e7e6e1" Grid.Column="2" Style="{DynamicResource ButtonRound}"  Height="50" Width="150" IsDefault="True" Content="添加" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
@@ -65,14 +63,14 @@
                   >
             <ListView.ContextMenu>
                 <ContextMenu StaysOpen="true">
-                    <MenuItem Header="批量录入" Name="MenuItem_update"/>
-                    <MenuItem Header="删除" />
+                    <!--<MenuItem Header="批量录入" Name="MenuItem_update"/>-->
+                    <MenuItem Name="MenuItem_delete" Click="MenuItem_delete_OnClick" Header="删除" />
                 </ContextMenu>
             </ListView.ContextMenu>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="序号" Width="{Binding ElementName=column1,Path=ActualWidth}" DisplayMemberBinding="{Binding No}" />
-                    <GridViewColumn Header="数量" Width="{Binding ElementName=column2,Path=ActualWidth}" DisplayMemberBinding="{Binding Number}" />
+                     <GridViewColumn Header="数量" Width="{Binding ElementName=column2,Path=ActualWidth}" DisplayMemberBinding="{Binding Number}" />
                     <GridViewColumn Header="条码" Width="{Binding ElementName=column3,Path=ActualWidth}" DisplayMemberBinding="{Binding Barcode}" />
                     <GridViewColumn Header="商品名"  Width="{Binding ElementName=column4,Path=ActualWidth}" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="单价"  Width="{Binding ElementName=column5,Path=ActualWidth}" DisplayMemberBinding="{Binding Price}"/>
@@ -117,15 +115,15 @@
                 <Label Content="件" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="26" FontWeight="Bold"></Label>
             </StackPanel>
             <Label Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Content="应收金额："  FontWeight="Bold" FontSize="26" Foreground="#323232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="75,0"/>
-            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Margin="70,0"/>
+            <TextBox Name="TextBox_YSJE" IsReadOnly="True" BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Margin="70,0"/>
             <Label Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Content="实收金额："  FontWeight="Bold" FontSize="26" Foreground="#323232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="75,0"/>
-            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" Margin="70,0"/>
+            <TextBox PreviewTextInput="TextBox_num_OnPreviewTextInput" Name="TextBox_SSJE" BorderBrush="#e7e6e1" LostFocus="UIElement_OnLostFocus"  Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" Margin="70,0"/>
             <Label Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="2" Content="应找金额："  FontWeight="Bold" FontSize="26" Foreground="#323232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="75,0"/>
-            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="2" Margin="70,0"/>
+            <TextBox Name="TextBox_yzje" IsReadOnly="True" BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="2" Margin="70,0"/>
             <Label Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" Content="交来金额："  FontWeight="Bold" FontSize="26" Foreground="#323232" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="75,0"/>
-            <TextBox BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" Margin="70,0"/>
-            <Button Grid.Row="1" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="2" Height="75" Width="192" Content="收银" Background="#e7e6e1" FontSize="24" Style="{DynamicResource ButtonRound}" Margin="15.8,25.2,174.6,35.8" />
-            <Button Grid.Row="4" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="2"  Height="75" Width="192" Content="退出" Background="#e7e6e1" FontSize="24" Style="{DynamicResource ButtonRound}" Margin="15.8,26.2,174.6,33.2" />
+            <TextBox PreviewTextInput="TextBox_num_OnPreviewTextInput" Name="TextBox_jlje"  BorderBrush="#e7e6e1" Background="#f7fbfc" FontSize="22" Style="{DynamicResource TextBoxStyle}"   Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" Margin="70,0"/>
+            <Button Name="Button_sy" Click="Button_sy_OnClick" Grid.Row="1" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="2" Height="75" Width="192" Content="收银" Background="#e7e6e1" FontSize="24" Style="{DynamicResource ButtonRound}" Margin="15.8,25.2,174.6,35.8" />
+            <Button Name="Button_return" Click="Button_return_OnClick" Grid.Row="4" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="2"  Height="75" Width="192" Content="退出" Background="#e7e6e1" FontSize="24" Style="{DynamicResource ButtonRound}" Margin="15.8,26.2,174.6,33.2" />
         </Grid>
     </Grid>
 </UserControl>

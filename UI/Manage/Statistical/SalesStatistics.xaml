@@ -56,13 +56,11 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Column="1" Foreground="#393e46"  Content="起始时间：" HorizontalAlignment="Left" Margin="10,0,0,0"   FontSize="20" VerticalContentAlignment="Center" Width="100"/>
                     <Label Grid.Column="2"  Foreground="#393e46"  Content="结束时间：" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="20" VerticalContentAlignment="Center"  Width="100"/>
-                    <view:DateTimePicker Grid.Column="1"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
-                    <view:DateTimePicker Grid.Column="2"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
+                    <view:DateTimePicker Name="TimePicker_startTime" Grid.Column="1"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
+                    <view:DateTimePicker  Name="TimePicker_stopTime" Grid.Column="2"  Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="110,0,0,0" VerticalAlignment="Center" Width="150"/>
                     <Label Grid.Column="3"  Foreground="#393e46"  Content="商品类型：" HorizontalAlignment="Left" Margin="10,0,0,0"  Height="37" Width="100" FontSize="20" VerticalContentAlignment="Center"/>
-                    <ComboBox Grid.Column="3"  HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
-                        <ComboBoxItem Content="全部" Foreground="#393e46" FontSize="15" Height="22"/>
-                        <ComboBoxItem Content="成功" Foreground="#393e46" FontSize="15" Height="22"/>
-                        <ComboBoxItem Content="失败" Foreground="#393e46" FontSize="15" Height="22"/>
+                    <ComboBox Name="ComboBox_type"  Grid.Column="3"  HorizontalAlignment="Left" Loaded="FrameworkElement_OnLoaded" VerticalAlignment="Center" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Margin="110,0,0,0" SelectedIndex="0" FontSize="15" Width="150" >
+                        <ComboBoxItem  Content="全部" Foreground="#393e46" FontSize="15" Height="22"/>
                     </ComboBox>
                     <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="7" Fill="#b9e1dc" RadiusX="20" RadiusY="20" Panel.ZIndex="-1"/>
                 </Grid>
@@ -72,14 +70,14 @@
                         <VisualBrush Visual="{Binding ElementName=maskf}"/>
                     </Grid.OpacityMask>
                     <StackPanel Orientation="Horizontal" >
-                        <Label Foreground="#393e46"  Content="总盈利" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="40,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                        <Label Foreground="#393e46"  Content="￥0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="总盈利￥" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="40,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Name="Label_numTotal" Foreground="#393e46"  Content="0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
                         <Label Foreground="#393e46"  Content="元" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                        <Label Foreground="#393e46"  Content="总销售" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                        <Label Foreground="#393e46"  Content="￥0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="总销售￥" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Name="Label_numPrice" Foreground="#393e46"  Content="0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
                         <Label Foreground="#393e46"  Content="元" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                        <Label Foreground="#393e46"  Content="总支出" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
-                        <Label Foreground="#393e46"  Content="￥0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Foreground="#393e46"  Content="总支出￥" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="200,10,0,10" FontSize="20" VerticalContentAlignment="Center"/>
+                        <Label Name="Label_spending" Foreground="#393e46"  Content="0.00" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="-9,10" FontSize="20" VerticalContentAlignment="Center"/>
                         <Label Foreground="#393e46"  Content="元" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="0,10" FontSize="20" VerticalContentAlignment="Center"/>
                     </StackPanel>
                     <Grid Margin="1442,10,14,10"  Width="100" HorizontalAlignment="Right">
@@ -87,7 +85,7 @@
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=maskd}"/>
                         </Grid.OpacityMask>
-                        <Button x:Name="button_select" Content="查询" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
+                        <Button x:Name="button_select" Click="Button_select_OnClick" Content="查询" Foreground="#393e46" Background="#79a8a9" FontSize="18" Height="40" Width="Auto" Panel.ZIndex="1" VerticalAlignment="Bottom" />
                         <Rectangle x:Name="maskd" Fill="#79a8a9" RadiusX="20" RadiusY="20"/>
                     </Grid>
                     <Rectangle x:Name="maskf" Fill="#aacfd0" RadiusX="20" RadiusY="20" Panel.ZIndex="-1" />
@@ -103,13 +101,13 @@
                             <lvc:Axis Name="Axis_y" Unit="1"  Foreground="#393e46" LabelFormatter="{Binding Formatter}"/>
                         </lvc:CartesianChart.AxisY>
                     </lvc:CartesianChart>
-                    <lvc:PieChart Series="{Binding SeriesCollection1}" InnerRadius="100" Foreground="#393e46" FontSize="8" LegendLocation="Left" Panel.ZIndex="1" Margin="1200,10,54,348"/>
-                    <Label Content="营销比例" Foreground="#393e46" FontSize="30" Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1360,120,0,0"/>
-                    <Label Content="盈利排行" Foreground="#393e46" FontSize="20" Height="38" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1356,290,0,0"/>
-                    <DataGrid MaxHeight="500" x:Name="DataGrid_file" Visibility="Visible" HorizontalAlignment="Left" RowHeaderWidth="0" VerticalAlignment="Top" Width="395" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2" Margin="1205,330,0,0">
+                    <lvc:PieChart Series="{Binding SeriesCollection1}" InnerRadius="100" Foreground="#393e46" FontSize="8" LegendLocation="Left" Panel.ZIndex="1" Margin="1250,10,53.6,348"/>
+                    <Label Content="营销比例" Foreground="#393e46" FontSize="30" Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1390,120,0,0"/>
+                    <Label Content="销售排行" Foreground="#393e46" FontSize="20" Height="38" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1356,290,0,0"/>
+                    <DataGrid MaxHeight="500" x:Name="DataGrid_file" Loaded="DataGrid_file_OnLoaded" Visibility="Visible" HorizontalAlignment="Left" RowHeaderWidth="0" VerticalAlignment="Top" Width="395" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2" Margin="1205,330,0,0">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="日期" Width="10*" Foreground="#393e46" Binding="{Binding ip}"/>
-                            <DataGridTextColumn Header="盈利金额" Width="5*" Foreground="#393e46" Binding="{Binding 漏洞数}"/>
+                            <DataGridTextColumn Header="日期" Width="10*" Foreground="#393e46" Binding="{Binding date}"/>
+                            <DataGridTextColumn Header="营销金额" Width="10*" Foreground="#393e46" Binding="{Binding Price}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

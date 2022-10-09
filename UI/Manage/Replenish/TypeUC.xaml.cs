@@ -20,7 +20,6 @@ using Models.Delegates;
 using Models.Infos;
 using Models.Infos.ApiInfo;
 using Models.Interfaces;
-using UI.Models;
 
 namespace UI.Manage.Replenish
 {
@@ -32,6 +31,8 @@ namespace UI.Manage.Replenish
         IGoodsTypeBusiness goodsTypeBusiness = new GoodsTypeBusiness();
         ITypeBusiness typeBusiness = new TypeBusiness();
         IGoodsExtendBusiness goodsExtendBusiness = new GoodsExtendBusiness();
+        private IGoodsAllNewBusiness goodsAllNewBusiness = new GoodsAllNewBusiness();
+
         private string goodsName = "";
         private int typeId = -1;
         public TypeUC()
@@ -71,7 +72,7 @@ namespace UI.Manage.Replenish
 
         private void Button_update_OnClick(object sender, RoutedEventArgs e)
         {
-            if (DataGrid_file.SelectedItem is GoodsUiInfo goodsUiInfo)
+            if (DataGrid_file.SelectedItem is GoodsAllNewInfo goodsUiInfo)
             {
                 Delegates.JumpDelegateObj("UI.Replenish.TypeUpdate", goodsUiInfo);
             }
@@ -82,9 +83,13 @@ namespace UI.Manage.Replenish
             MessageBoxResult message = MessageBox.Show("您确定要删除吗", "提示", MessageBoxButton.YesNo, MessageBoxImage.Information);
             if (message == MessageBoxResult.Yes)
             {
-                if (DataGrid_file.SelectedItem is GoodsUiInfo goodsUiInfo)
+                if (DataGrid_file.SelectedItem is GoodsAllNewInfo goodsUiInfo)
                 {
-                    MessageBox.Show(goodsTypeBusiness.Delete(goodsUiInfo));
+                    ApiGoodsTypeAddInfo apiGoodsTypeAddInfo = new ApiGoodsTypeAddInfo();
+                    apiGoodsTypeAddInfo.id = goodsUiInfo.id;
+                    apiGoodsTypeAddInfo.storeId = goodsUiInfo.storeId;
+                    apiGoodsTypeAddInfo.type = 2;
+                    MessageBox.Show(goodsTypeBusiness.Delete(apiGoodsTypeAddInfo));
                     var list = GetList();
                     //if (pg.CurrentPageNumber <= 1)
                     //{
@@ -114,61 +119,90 @@ namespace UI.Manage.Replenish
             }
         }
 
-        private List<GoodsUiInfo> GetList()
+        private List<GoodsAllNewInfo> GetList()
         {
-            var apiGoodsTypeInfos = goodsTypeBusiness.GetList(goodsName, typeId);
-            var goodsExtendInfos = goodsExtendBusiness.GetAll();
-            var list = (from a in apiGoodsTypeInfos
-                        join b in goodsExtendInfos on a.id equals b.goodsId
-                        select new GoodsUiInfo()
-                        {
-                            barCode = a.barCode,
-                            category_name = a.category_name,
-                            comboGoodsArr = a.comboGoodsArr,
-                            discountOpen = a.discountOpen,
-                            display = a.display,
-                            icon = a.icon,
-                            id = a.id,
-                            isMain = a.isMain,
-                            isRecommend = a.isRecommend,
-                            isSpecs = a.isSpecs,
-                            maxPrice = a.maxPrice,
-                            media = a.media,
-                            name = a.name,
-                            price = a.price,
-                            salesNum = a.salesNum,
-                            sort = a.sort,
-                            stock = a.stock,
-                            storeId = a.storeId,
-                            typeId = a.typeId,
-                            typePid = a.typePid,
-                            unit = a.unit,
-                            shelfLife = b.shelfLife,
-                            createTime = b.createTime,
-                            bid = b.id,
-                            inventoryAlert = b.inventoryAlert,
-                        }).ToList();
-            List<int> ids = list.Select((info => info.id)).ToList();
-            foreach (ApiGoodsTypeInfo apiGoodsTypeInfo in apiGoodsTypeInfos)
-            {
-                if (!ids.Contains(apiGoodsTypeInfo.id))
-                {
-                    GoodsUiInfo goodsUiInfo = JsonHelper.ParentToSubObject<ApiGoodsTypeInfo, GoodsUiInfo>(apiGoodsTypeInfo);
-                    list.Add(goodsUiInfo);
-                }
-            }
-            pg.TotalDataCount = list.Count;
-            Label_num.Content = $"共有 {list.Count} 条数据";
+            //var apiGoodsTypeInfos = goodsTypeBusiness.GetList(goodsName, typeId);
+            //var goodsExtendInfos = goodsExtendBusiness.GetAll();
+
+            var goodsAllNewInfos = goodsAllNewBusiness.GetGoodsList(goodsName, typeId, "", "");
+
+            //List<int> ids = goodsAllNewInfos.Select((info => info.id)).ToList();
+            //foreach (ApiGoodsTypeInfo apiGoodsTypeInfo in apiGoodsTypeInfos)
+            //{
+            //    if (!ids.Contains(apiGoodsTypeInfo.id))
+            //    {
+            //        GoodsAllNewInfo goodsUiInfo = JsonHelper.ParentToSubObject<ApiGoodsTypeInfo, GoodsAllNewInfo>(apiGoodsTypeInfo);
+            //        goodsAllNewInfos.Add(goodsUiInfo);
+            //    }
+            //}
+            pg.TotalDataCount = goodsAllNewInfos.Count;
+            Label_num.Content = $"共有 {goodsAllNewInfos.Count} 条数据";
             if (pg.CurrentPageNumber <= 1)
             {
-                DataGrid_file.DataContext = list.SubList(0, pg.PageDataCount);
+                DataGrid_file.DataContext = goodsAllNewInfos.SubList(0, pg.PageDataCount);
             }
             else
             {
-                DataGrid_file.DataContext = list.SubList((pg.CurrentPageNumber - 1) * pg.PageDataCount, pg.PageDataCount);
+                DataGrid_file.DataContext = goodsAllNewInfos.SubList((pg.CurrentPageNumber - 1) * pg.PageDataCount, pg.PageDataCount);
             }
 
-            return list;
+            #region 旧代码
+            //var list = (from a in apiGoodsTypeInfos
+            //            join b in goodsExtendInfos on a.id equals b.goodsId
+            //            select new GoodsAllInfo()
+            //            {
+            //                barCode = a.barCode,
+            //                category_name = a.category_name,
+            //                comboGoodsArr = a.comboGoodsArr,
+            //                discountOpen = a.discountOpen,
+            //                display = a.display,
+            //                icon = a.icon,
+            //                id = a.id,
+            //                isMain = a.isMain,
+            //                isRecommend = a.isRecommend,
+            //                isSpecs = a.isSpecs,
+            //                maxPrice = a.maxPrice,
+            //                media = a.media,
+            //                name = a.name,
+            //                price = a.price,
+            //                salesNum = a.salesNum,
+            //                sort = a.sort,
+            //                stock = a.stock,
+            //                storeId = a.storeId,
+            //                typeId = a.typeId,
+            //                typePid = a.typePid,
+            //                unit = a.unit,
+            //                shelfLife = b.shelfLife,
+            //                createTime = b.createTime,
+            //                bid = b.id,
+            //                inventoryAlert = b.inventoryAlert,
+            //                note = b.note
+            //            }).ToList();
+            //List<int> ids = list.Select((info => info.id)).ToList();
+            //foreach (ApiGoodsTypeInfo apiGoodsTypeInfo in apiGoodsTypeInfos)
+            //{
+            //    if (!ids.Contains(apiGoodsTypeInfo.id))
+            //    {
+            //        GoodsAllInfo goodsUiInfo = JsonHelper.ParentToSubObject<ApiGoodsTypeInfo, GoodsAllInfo>(apiGoodsTypeInfo);
+            //        list.Add(goodsUiInfo);
+            //    }
+            //}
+            //pg.TotalDataCount = list.Count;
+            //Label_num.Content = $"共有 {list.Count} 条数据";
+            //if (pg.CurrentPageNumber <= 1)
+            //{
+            //    DataGrid_file.DataContext = list.SubList(0, pg.PageDataCount);
+            //}
+            //else
+            //{
+            //    DataGrid_file.DataContext = list.SubList((pg.CurrentPageNumber - 1) * pg.PageDataCount, pg.PageDataCount);
+            //}
+
+
+
+            #endregion
+
+            return goodsAllNewInfos;
         }
         private void Button_select_OnClick(object sender, RoutedEventArgs e)
         {

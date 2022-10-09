@@ -14,7 +14,7 @@ namespace Models.Interfaces
     {
         List<ApiGoodsTypeInfo> GetAll();
         string Insert(ApiGoodsTypeAddInfo goodsTypeAddInfo);
-        string Delete(ApiGoodsTypeInfo goodsTypeAddInfo);
+        string Delete(ApiGoodsTypeAddInfo goodsTypeAddInfo);
         ApiGoodsTypeAddInfo GetAddId(int id);
     }
 }

@@ -62,7 +62,7 @@ namespace UI.Manage.Sales
         {
             if (DataGrid_file.SelectedItem is ReturnCustomerInfo returnCustomerInfo)
             {
-                //Delegates.JumpDelegateObj("UI.Replenish.TypeUpdate", returnCustomerInfo);
+                Delegates.JumpDelegateObj("UI.Sales.CustomerReturnUpdate", returnCustomerInfo);
             }
         }
 

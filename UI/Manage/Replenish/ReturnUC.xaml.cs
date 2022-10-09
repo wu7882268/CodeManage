@@ -56,7 +56,7 @@ namespace UI.Manage.Replenish
         {
             if (DataGrid_file.SelectedItem is ReturnInfo returnInfo)
             {
-                //Delegates.JumpDelegateObj("UI.Replenish.TypeUpdate", returnInfo);
+                Delegates.JumpDelegateObj("UI.Replenish.ReturnUpdate", returnInfo);
             }
         }
 

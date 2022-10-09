@@ -109,19 +109,19 @@
                         <DataGridTextColumn Header="序号" Width="3*" Foreground="#393e46" Binding="{Binding id}"/>
                         <DataGridTextColumn Header="商品名称" Width="8*" Foreground="#393e46" Binding="{Binding name}"/>
                         <DataGridTextColumn Header="所属类别" Width="8*" Foreground="#393e46" Binding="{Binding category_name}"/>
-                        <!--<DataGridTextColumn Header="保质期" Width=" 5*" Foreground="#393e46" Binding="{Binding description}"/>-->
+                        <DataGridTextColumn Header="保质期(天)" Width=" 5*" Foreground="#393e46" Binding="{Binding shelfLife}"/>
                         <!--<DataGridTextColumn Header="库存" Width="5*" Foreground="#393e46" Binding="{Binding stock}"/>-->
                         <DataGridTextColumn Header="商品条码" Width="10*" Foreground="#393e46" Binding="{Binding barCode}"/>
                         <DataGridTextColumn Header="单位" Width="5*" Foreground="#393e46" Binding="{Binding unit}"/>
                         <DataGridTextColumn Header="价格" Width="5*" Foreground="#393e46" Binding="{Binding price}"/>
-                        <DataGridTextColumn Header="销量" Width="5*" Foreground="#393e46" Binding="{Binding salesNum}"/>
+                        <!--<DataGridTextColumn Header="销量" Width="5*" Foreground="#393e46" Binding="{Binding salesNum}"/>-->
                         <!--<DataGridTextColumn Header="备注" Width="10*" Foreground="#393e46" Binding="{Binding level}"/>-->
                         <DataGridTemplateColumn Header="操作" Width="10*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <!--<Button Content="详情" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>-->
-                                        <Button Name="Button_update" Click="Button_update_OnClick"  Content="更改" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
+                                        <!--<Button Name="Button_updateSub" Click="Button_updateSub_OnClick" Content="详情" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>-->
+                                        <Button Name="Button_update" Click="Button_update_OnClick"  Content="编辑" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
                                         <Button Name="Button_delete" Click="Button_delete_OnClick" Content="删除" Style="{DynamicResource ComboBoxButtonStyle}" Panel.ZIndex="1"/>
                                     </StackPanel>
                                 </DataTemplate>

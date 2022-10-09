@@ -37,7 +37,7 @@
                         <Image  Source="/Images/优质供应商.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
                         <Button x:Name="Button_gysgl" Click="Button_gysgl_OnClick" Content="供应商管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
                     </Grid>
-                    <Grid Margin="0,0,0,2">
+                    <Grid Visibility="Collapsed" Margin="0,0,0,2">
                         <Image  Source="/Images/顾客.png"  Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
                         <Button  Name="Button_User" Click="Button_User_OnClick" Content="客户管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto" />
                     </Grid>
@@ -95,10 +95,10 @@
                     </Grid>
                 </Expander.Header>
                 <StackPanel Margin="20,0,120,0">
-                    <Grid Margin="0,0,0,2">
+                    <!--<Grid Margin="0,0,0,2">
                         <Image Source="/Images/仓库_库存详情.png"   Width="26" Height="20" Margin="12,0,110,0" Panel.ZIndex="1"/>
                         <Button Name="button_ckgl" Click="Button_ckgl_OnClick"  Content="仓库管理" Style="{DynamicResource BtnInfoStylemain}" Width="Auto"/>
-                    </Grid>
+                    </Grid>-->
                     <Grid Margin="0,0,0,2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="99*"/>
@@ -128,7 +128,7 @@
                 </StackPanel>
             </Expander>
 
-            <Expander x:Name="expander_qxgl" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_qxgl_Expanded">
+            <Expander Visibility="Collapsed"  x:Name="expander_qxgl" Style="{DynamicResource ExpanderStyle}" Expanded="Expander_qxgl_Expanded">
                 <Expander.Header>
                     <Grid Height="20">
                         <Image Margin="5,0,106,3" Source="/Images/权限.png"  Height="17" Width="41"/>
@@ -148,24 +148,26 @@
             </Expander>
         </StackPanel>
         <Grid Background="#1f4e5f" Grid.ColumnSpan="2" Grid.RowSpan="1">
-            <!--<Image Source="/Images/logo.png" Margin="33,10,1703,10"/>-->
+            <Image Source="../Images/百信LOGO.png" Margin="20,10,1703,10"/>
             <Label Foreground="#ffffff" Content="商 超 后 台 管 理 系 统" Height="75" FontSize="52" HorizontalContentAlignment="Stretch" FontFamily="Papyrus" Margin="220,31,845,31"/>
-            <ComboBox Name="samplenoSource" FontFamily="FZLTZHUNHK" FontSize="18" Foreground="#FFd0d0d0" BorderBrush="#00565656" VerticalContentAlignment="Center" Padding="65,0,0,0" IsEditable="False" Style="{DynamicResource ComboBoxStyle}" Margin="1825,41,47,29" HorizontalContentAlignment="Center" Panel.ZIndex="1" SelectionChanged="SamplenoSource_SelectionChanged">
-                <ComboBox.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#00F9F8F8" Offset="0"/>
-                        <GradientStop Color="#00C6C6CA" Offset="0.75"/>
-                    </LinearGradientBrush>
-                </ComboBox.Background>      
-                <ComboBoxItem Name="ComboBoxItem_grxx" Content="个人信息" Padding="10,0,10,0" Foreground="#323232"/>      
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <!--<Image Source="/Images/userImages1.png" Width="60" Height="60" Margin="0"  Name="image1" Panel.ZIndex="1"/>-->
+                <Label Name="Label_UserName" Content="超级管理员" Foreground="#ffffff" FontSize="24" Margin="10"  VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" FontFamily="宋体"/>
+                <Button Click="Button_home_OnClick" x:Name="button_home" Margin="2" Height="50" Panel.ZIndex="1" Style="{DynamicResource BtnImageStyle1}" />
+                <Button  Click="Button_home_OnClick" Name="button_gj" Margin="2" Width="50" Height="50" Panel.ZIndex="1" Style="{DynamicResource BtnImageStyle2}" />
+                <ComboBox Name="samplenoSource" FontFamily="FZLTZHUNHK" FontSize="18" Foreground="#FFd0d0d0" BorderBrush="#00565656" Margin="10,50,30,50" VerticalContentAlignment="Center"  IsEditable="False" Style="{DynamicResource ComboBoxStyle}"  HorizontalContentAlignment="Center" Panel.ZIndex="1" SelectionChanged="SamplenoSource_SelectionChanged">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#00F9F8F8" Offset="0"/>
+                            <GradientStop Color="#00C6C6CA" Offset="0.75"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>      
+                    <!--<ComboBoxItem Name="ComboBoxItem_grxx" Content="个人信息" Padding="10,0,10,0" Foreground="#323232"/>      
                 <ComboBoxItem Name="ComboBoxItem_xgmm" Content="修改密码" Padding="10,0,10,0" Foreground="#323232"/>
-                <ComboBoxItem Name="ComboBoxItem_bbxx" Content="版本信息" Padding="10,0,10,0" Foreground="#323232"/>
-                <ComboBoxItem Name="ComboBoxItem_aqtc" Content="安全退出" Padding="10,0,10,0" Foreground="#323232"/>
-            </ComboBox>
-            <!--<Image Source="/Images/userImages1.png" Width="50" Height="50" Name="image1" Margin="1502,54,360,33" Panel.ZIndex="1"/>-->
-            <Button Click="Button_home_OnClick" x:Name="button_home" Margin="1703,53,165,34" Width="50" Height="50" Panel.ZIndex="1" Style="{DynamicResource BtnImageStyle1}" />
-            <Button  Click="Button_home_OnClick" Name="button_gj" Margin="1770,53,98,34" Width="50" Height="50" Panel.ZIndex="1" Style="{DynamicResource BtnImageStyle2}" />
-            <Label Name="Label_UserName" Content="超级管理员" Foreground="#ffffff" FontSize="24" HorizontalContentAlignment="Stretch" FontFamily="宋体" Margin="1560,56,189,34"/>
+                <ComboBoxItem Name="ComboBoxItem_bbxx" Content="版本信息" Padding="10,0,10,0" Foreground="#323232"/>-->
+                    <ComboBoxItem Name="ComboBoxItem_aqtc" Content="安全退出" Padding="10,0,10,0" Foreground="#323232"/>
+                </ComboBox>
+            </StackPanel>
         </Grid>
         <!--</Canvas>-->
         <!--</Viewbox>-->
@@ -175,5 +177,4 @@
         </Grid>
         <ContentControl x:Name="ContentControl_main" HorizontalAlignment="Left" VerticalAlignment="Top" Height="939" Width="1709" Grid.Column="1" Grid.Row="1" BorderBrush="#FF2F3778" Margin="0.2,0.2,-0.4,0"/>
     </Grid>
-
 </UserControl>

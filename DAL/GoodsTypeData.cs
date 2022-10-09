@@ -64,15 +64,16 @@ namespace DAL
 
             webHeader.Add("Cookie", $"PHPSESSID={ApiStatic.PHPSESSID}");
             string str = HttpHelper.HttpPost<ApiGoodsTypeAddInfo>($"{ApiStatic.ApiUrl}channel/good/goods-save", goodsTypeAddInfo,HttpHelper.ContentTypeJson, webHeader);
-            var apiMsg = JsonHelper.JsonToObject<ApiBaseInfo<ApiGoodsTypeAddInfo>>(CodeHelper.Unicode2String(str));
+            var apiMsg = JsonHelper.JsonToObject<ApiBaseNewInfo>(CodeHelper.Unicode2String(str));
             return apiMsg.msg;
         }
 
-        public string Delete(ApiGoodsTypeInfo goodsTypeAddInfo)
+        public string Delete(ApiGoodsTypeAddInfo goodsTypeAddInfo)
         {
             ApiDeleteInfo apiDeleteInfo = new ApiDeleteInfo();
             apiDeleteInfo.id = goodsTypeAddInfo.id.ToString();
-            apiDeleteInfo.type = 1;
+            apiDeleteInfo.storeId = goodsTypeAddInfo.storeId;
+            apiDeleteInfo.type = 2;
             WebHeaderCollection webHeader = new WebHeaderCollection();
             webHeader.Add("Cookie", $"PHPSESSID={ApiStatic.PHPSESSID}");
             string str = HttpHelper.HttpPost<ApiDeleteInfo>($"{ApiStatic.ApiUrl}channel/good/good-del", apiDeleteInfo, HttpHelper.ContentTypeJson, webHeader);
@@ -84,7 +85,7 @@ namespace DAL
         {
             WebHeaderCollection webHeader = new WebHeaderCollection();
             webHeader.Add("Cookie", $"PHPSESSID={ApiStatic.PHPSESSID}");
-            string str = HttpHelper.GetHttpResponse($"{ApiStatic.ApiUrl}channel/good/good-detail", 6000, HttpHelper.ContentTypeJson, webHeader, $"?id={id}");
+            string str = HttpHelper.GetHttpResponse($"{ApiStatic.ApiUrl}channel/good/good-detail", 6000, HttpHelper.ContentTypeJson, webHeader, $"?id={id}&storeId={ApiStatic.StoreId}");
             str = JsonHelper.JsonSpecifiedNode(str, "data", "detail");
             ApiGoodsTypeAddInfo apiGoodsTypeAddInfo = JsonHelper.JsonToObject<ApiGoodsTypeAddInfo>(str);
             return apiGoodsTypeAddInfo;

@@ -16,13 +16,17 @@ namespace Models.Infos
         /// </summary>
         public int id { get; set; }
         /// <summary>
-        /// 用户ID
+        /// 门店id
         /// </summary>
-        public int userId { get; set; }
+        public int storeId { get; set; }
         /// <summary>
         /// 商品id
         /// </summary>
         public int goodsId { get; set; }
+        /// <summary>
+        /// 供应商ID
+        /// </summary>
+        public int supplierId { get; set; }
         /// <summary>
         /// 商品名称
         /// </summary>

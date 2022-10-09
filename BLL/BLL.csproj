@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GoodsAllNewBusiness.cs" />
+    <Compile Include="HomePageBusiness.cs" />
+    <Compile Include="InventoryStatisticsBusiness.cs" />
+    <Compile Include="SalesStatisticsBusiness.cs" />
+    <Compile Include="CashierBusiness.cs" />
+    <Compile Include="GoodsAllBusiness.cs" />
     <Compile Include="SupplierBusiness.cs" />
     <Compile Include="ReturnBusiness.cs" />
     <Compile Include="ReturnCustomerBusiness.cs" />
@@ -66,6 +72,10 @@
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{8ab57541-bfb6-4692-a440-a0a2785cb555}</Project>
       <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{bf84d105-8233-4814-9a6f-1816d624e259}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

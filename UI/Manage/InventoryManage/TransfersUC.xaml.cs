@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using BLL;
 using Helpers;
 using Models.Delegates;
+using Models.Infos;
 using Models.Infos.ApiInfo;
 using Models.Interfaces;
 
@@ -28,6 +29,7 @@ namespace UI.Manage.InventoryManage
     {
         IGoodsTypeBusiness goodsTypeBusiness = new GoodsTypeBusiness();
         ITypeBusiness typeBusiness = new TypeBusiness();
+        private IGoodsAllNewBusiness goodsAllNewBusiness = new GoodsAllNewBusiness();
         private string goodsName = "";
         private int typeId = -1;
         public TransfersUC()
@@ -76,17 +78,17 @@ namespace UI.Manage.InventoryManage
             }
         }
 
-        private List<ApiGoodsTypeInfo> GetList()
+        private List<GoodsAllNewInfo> GetList()
         {
-            var list = goodsTypeBusiness.GetAll();
-            if (!string.IsNullOrEmpty(goodsName))
-            {
-                list = list.Where((info => info.name.Contains(goodsName))).ToList();
-            }
-            if (typeId > 0)
-            {
-                list = list.Where((info => int.Parse(info.typePid) == typeId)).ToList();
-            }
+            var list = goodsAllNewBusiness.GetGoodsList(goodsName, typeId, "", "");
+            //if (!string.IsNullOrEmpty(goodsName))
+            //{
+            //    list = list.Where((info => info.name.Contains(goodsName))).ToList();
+            //}
+            //if (typeId > 0)
+            //{
+            //    list = list.Where((info => int.Parse(info.typePid) == typeId)).ToList();
+            //}
             pg.TotalDataCount = list.Count;
             return list;
         }
@@ -116,7 +118,7 @@ namespace UI.Manage.InventoryManage
 
         private void Button_update_OnClick(object sender, RoutedEventArgs e)
         {
-            if (DataGrid_file.SelectedItem is ApiGoodsTypeInfo apiGoodsTypeInfo)
+            if (DataGrid_file.SelectedItem is GoodsAllNewInfo apiGoodsTypeInfo)
             {
                 Delegates.JumpDelegateObj("UI.Manage.InventoryManage.TransfersALL", apiGoodsTypeInfo);
             }

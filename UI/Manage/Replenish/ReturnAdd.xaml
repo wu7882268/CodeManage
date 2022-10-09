@@ -45,7 +45,7 @@
             <Grid.OpacityMask>
                 <VisualBrush Visual="{Binding ElementName=maskx}"/>
             </Grid.OpacityMask>
-            <Button x:Name="Button_xyb" Content="返回" Foreground="#393e46" Background="#aacfd0" FontSize="18" Height="Auto" Width="Auto" Panel.ZIndex="1" />
+            <Button x:Name="Button_xyb" Click="Button_xyb_OnClick" Content="返回" Foreground="#393e46" Background="#aacfd0" FontSize="18" Height="Auto" Width="Auto" Panel.ZIndex="1" />
             <Rectangle x:Name="maskx" Fill="#aacfd0" RadiusX="20" RadiusY="20"/>
         </Grid>
         <Grid x:Name="Grid_xg" Margin="187,2,32,2" Grid.Row="12">
@@ -53,15 +53,15 @@
             <Grid.OpacityMask>
                 <VisualBrush Visual="{Binding ElementName=maskw}"/>
             </Grid.OpacityMask>
-            <Button x:Name="Button_syb" Content="添加" Foreground="#393e46" Background="#aacfd0" FontSize="18" Height="Auto" Width="Auto" Panel.ZIndex="1" />
+            <Button x:Name="Button_add" Click="Button_add_OnClick" Content="添加" Foreground="#393e46" Background="#aacfd0" FontSize="18" Height="Auto" Width="Auto" Panel.ZIndex="1" />
             <Rectangle x:Name="maskw" Fill="#aacfd0" RadiusX="20" RadiusY="20"/>
         </Grid>
         <Label Foreground="#393e46" Content="商品名称：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
-        <ComboBox Name="ComboBox_goodsName" Loaded="ComboBox_goodsName_OnLoaded" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="0" SelectedIndex="0" FontSize="16">
+        <ComboBox Name="ComboBox_goodsName"  SelectionChanged="ComboBox_goodsName_OnSelectionChanged" Loaded="ComboBox_goodsName_OnLoaded" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="0" SelectedIndex="0" FontSize="16">
             <ComboBoxItem Content="-请选择商品-" Foreground="#323232" FontSize="16" Height="22"/>
         </ComboBox>
         <Label Foreground="#393e46" Content="备注：" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="8" Width="163" HorizontalContentAlignment="Right"/>
-        <TextBox CaretBrush="#cccccc" x:Name="TextBox_ip_reason" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" HorizontalAlignment="Left" Height="136" Margin="11,10,0,0" VerticalAlignment="Top" Width="426" BorderBrush="{x:Null}" FontSize="18" Foreground="#393e46"  MinHeight="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsTab="True" AcceptsReturn="True" Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="1"/>
+        <TextBox Text="{Binding note}" CaretBrush="#cccccc" x:Name="TextBox_ip_reason" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" HorizontalAlignment="Left" Height="136" Margin="11,10,0,0" VerticalAlignment="Top" Width="426" BorderBrush="{x:Null}" FontSize="18" Foreground="#393e46"  MinHeight="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsTab="True" AcceptsReturn="True" Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="1"/>
         <Label x:Name="Label_mask_t_Copy4" Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="0" Width="19" Grid.Column="2"/>
         <Label Grid.Row="6" Foreground="#393e46" Content="退货单价：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <Label Grid.Row="7" Foreground="#393e46" Content="退货总价：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
@@ -70,18 +70,19 @@
         <Label Grid.Row="4" Foreground="#393e46" Content="退货数量：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <Label Grid.Row="5" Foreground="#393e46" Content="商品单位：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
         <Label Grid.Row="1" Foreground="#393e46" Content="退货时间：" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Right" Width="125"/>
-        <view:DateTimePicker  Grid.Row="1" Grid.Column="1" Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="11,10,0,0"  VerticalAlignment="Center" Width="300"/>
-        <ComboBox Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="3" SelectedIndex="0" FontSize="16">
+        <view:DateTimePicker  Name="TimePicker_time" Grid.Row="1" Grid.Column="1" Foreground="#393e46" HorizontalAlignment="Left" Height="26" Margin="11,10,0,0"  VerticalAlignment="Center" Width="300"/>
+        <ComboBox Name="ComboBox_Supplier" Loaded="ComboBox_Supplier_OnLoaded" Style="{DynamicResource ComboBoxStyleSub}" Foreground="#393e46" Grid.Column="1" Margin="10,10,1,0" Grid.Row="3" SelectedIndex="0" FontSize="16">
             <ComboBoxItem Content="-请选择供应商-" Foreground="#323232" FontSize="16" Height="22"/>
         </ComboBox>
-        <TextBox CaretBrush="#cccccc" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
-        <TextBox CaretBrush="#cccccc" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
-        <TextBox CaretBrush="#cccccc" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
+        <TextBox Text="{Binding reason}" CaretBrush="#cccccc" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
+        <TextBox Name="TextBox_num" LostFocus="TextBox_returnPrice_OnLostFocus" Text="{Binding number}" CaretBrush="#cccccc" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
+        <TextBox Name="TextBox_unit" Text="{Binding unit}" CaretBrush="#cccccc" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
         <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="1" Width="19" Grid.Column="2"/>
         <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="3" Width="19" Grid.Column="2"/>
         <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="4" Width="19" Grid.Column="2"/>
         <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="5" Width="19" Grid.Column="2"/>
-        <TextBox CaretBrush="#cccccc" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
-        <TextBox CaretBrush="#cccccc" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
+        <Label Foreground="Red" Content="*" HorizontalAlignment="Left" Margin="0,12,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="6" Width="19" Grid.Column="2"/>
+        <TextBox Name="TextBox_returnPrice" LostFocus="TextBox_returnPrice_OnLostFocus" Text="{Binding returnPrice}" CaretBrush="#cccccc" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
+        <TextBox Name="TextBox_totalPrice"  Text="{Binding totalPrice}" CaretBrush="#cccccc" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="18" Foreground="#393e46" />
     </Grid>
 </UserControl>

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Models.Infos
 {
     /// <summary>
-    /// 商品销售UI实体类
+    /// 商品销售实体类
     /// </summary>
-    public class SalesUiInfo
+    public class SalesInfo
     {
         /// <summary>
         /// 序号
@@ -39,5 +39,13 @@ namespace Models.Infos
         /// 备注
         /// </summary>
         public string Note { get; set; }
+        /// <summary>
+        /// 商品id
+        /// </summary>
+        public int goodsId { get; set; }
+        /// <summary>
+        /// 商品单位
+        /// </summary>
+        public string unit { get; set; }
     }
 }

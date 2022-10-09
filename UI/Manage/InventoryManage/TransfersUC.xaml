@@ -97,6 +97,7 @@
                         <DataGridTextColumn Header="序号" Width="3*" Foreground="#393e46" Binding="{Binding id}"/>
                         <!--<DataGridTextColumn Header="仓库名称" Width="10*" Foreground="#393e46" Binding="{Binding operatetime}"/>-->
                         <DataGridTextColumn Header="商品名称" Width="10*" Foreground="#393e46" Binding="{Binding name}"/>
+                        <DataGridTextColumn Header="商品类型" Width="10*" Foreground="#393e46" Binding="{Binding category_name}"/>
                         <DataGridTextColumn Header="库存数量" Width="10*" Foreground="#393e46" Binding="{Binding stock}"/>
                         <DataGridTemplateColumn Header="操作" Width="10*">
                             <DataGridTemplateColumn.CellTemplate>

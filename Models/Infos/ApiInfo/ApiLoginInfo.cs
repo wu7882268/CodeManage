@@ -30,7 +30,7 @@ namespace Models.Infos.ApiInfo
         /// <summary>
         /// 商店ID
         /// </summary>
-        public string storeId { get; set; }
+        public int storeId { get; set; }
         /// <summary>
         /// 电话
         /// </summary>

@@ -16,9 +16,9 @@ namespace Models.Infos
         /// </summary>
         public int id { get; set; }
         /// <summary>
-        /// 用户ID
+        /// 门店id
         /// </summary>
-        public int userId { get; set; }
+        public int storeId { get; set; }
         /// <summary>
         /// 商品id
         /// </summary>

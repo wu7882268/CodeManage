@@ -57,7 +57,7 @@ namespace UI.Manage.Information
         {
             if (DataGrid_file.SelectedItem is SupplierInfo supplierInfo)
             {
-                //Delegates.JumpDelegateObj("UI.Replenish.TypeUpdate", supplierInfo);
+                Delegates.JumpDelegateObj("UI.Manage.Information.SupplierUpdate", supplierInfo);
             }
         }
 
@@ -80,7 +80,7 @@ namespace UI.Manage.Information
             if (pg != null)
                 pg.TotalDataCount = list.Count;
             if (Label_num != null)
-                Label_num.Content = $"{list.Count}";
+                Label_num.Content = $"共有 {list.Count} 条数据";
             if (pg.CurrentPageNumber <= 1)
             {
                 DataGrid_file.DataContext = list.SubList(0, pg.PageDataCount);

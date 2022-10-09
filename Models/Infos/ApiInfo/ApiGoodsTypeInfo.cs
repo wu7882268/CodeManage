@@ -18,11 +18,11 @@ namespace Models.Infos.ApiInfo
         /// <summary>
         /// 折扣1开启2关闭
         /// </summary>
-        public int discountOpen { get; set; }
+        public int? discountOpen { get; set; }
         /// <summary>
         /// 排序
         /// </summary>
-        public int sort { get; set; }
+        public int? sort { get; set; }
         /// <summary>
         /// 商品名称
         /// </summary>
@@ -42,7 +42,7 @@ namespace Models.Infos.ApiInfo
         /// <summary>
         /// 销量
         /// </summary>
-        public int salesNum { get; set; }
+        public int? salesNum { get; set; }
         /// <summary>
         /// 分类Pid
         /// </summary>
@@ -54,19 +54,23 @@ namespace Models.Infos.ApiInfo
         /// <summary>
         /// 价格
         /// </summary>
-        public double price { get; set; }
+        public double? price { get; set; }
+        /// <summary>
+        /// 成本价格
+        /// </summary>
+        public double? costPrice { get; set; }
         /// <summary>
         /// 库存
         /// </summary>
-        public int stock { get; set; }
+        public int? stock { get; set; }
         /// <summary>
         /// 推荐 1是,2否
         /// </summary>
-        public int isRecommend { get; set; }
+        public int? isRecommend { get; set; }
         /// <summary>
         /// 1 显示，2隐藏 3待上架
         /// </summary>
-        public int display { get; set; }
+        public int? display { get; set; }
         /// <summary>
         /// 最大价格
         /// </summary>

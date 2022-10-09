@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BLL;
+using DAL;
 using Helpers;
 using Models;
 using Models.Infos;
@@ -19,6 +20,22 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            if (typeof(int) == typeof(int?))
+            {
+                Console.WriteLine();
+            }
+            IGoodsAllData goodsAllData = new GoodsAllData();
+            ApiStatic.StoreId = 1;
+            List<GoodsAllNewInfo> goodsAllNewInfos =goodsAllData.GetAll();
+            ITypeBusiness typeBusiness1 = new TypeBusiness();
+            string str1 =
+                "[\r\n  {\r\n    \"id\": \"6\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"1\",\r\n    \"name\": \"日杂\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"2\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"2\",\r\n    \"name\": \"零食\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [\r\n      {\r\n        \"id\": \"5\",\r\n        \"describe\": \"\",\r\n        \"sort\": \"1\",\r\n        \"name\": \"辣条\",\r\n        \"pid\": \"2\",\r\n        \"icon\": \"\",\r\n        \"display\": \"1\",\r\n        \"startTime\": \"00:00\",\r\n        \"endTime\": \"00:00\",\r\n        \"weekStr\": [\r\n          \"周一\",\r\n          \"周二\",\r\n          \"周三\",\r\n          \"周四\",\r\n          \"周五\",\r\n          \"周六\",\r\n          \"周日\"\r\n        ],\r\n        \"isRequire\": \"2\",\r\n        \"timeType\": \"1\",\r\n        \"configData\": null\r\n      }\r\n    ],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"3\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"3\",\r\n    \"name\": \"五金\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"4\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"4\",\r\n    \"name\": \"酒水\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"7\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"5\",\r\n    \"name\": \"饮料\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"8\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"6\",\r\n    \"name\": \"纯净水\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"9\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"7\",\r\n    \"name\": \"自热火锅\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"10\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"8\",\r\n    \"name\": \"自热米饭\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"11\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"9\",\r\n    \"name\": \"干果\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  },\r\n  {\r\n    \"id\": \"12\",\r\n    \"customName\": \"\",\r\n    \"describe\": \"\",\r\n    \"sort\": \"10\",\r\n    \"name\": \"熟食\",\r\n    \"pid\": \"0\",\r\n    \"icon\": \"\",\r\n    \"display\": \"1\",\r\n    \"startTime\": \"00:00\",\r\n    \"endTime\": \"00:00\",\r\n    \"weekStr\": [\r\n      \"周一\",\r\n      \"周二\",\r\n      \"周三\",\r\n      \"周四\",\r\n      \"周五\",\r\n      \"周六\",\r\n      \"周日\"\r\n    ],\r\n    \"isRequire\": \"2\",\r\n    \"timeType\": \"1\",\r\n    \"ciri\": \"2\",\r\n    \"children\": [],\r\n    \"configData\": null\r\n  }\r\n]";
+
+
+                var subList = JsonHelper.JsonToObject<List<ApiTypeInfo>>(str1);
+            IOrderBusiness orderBusiness = new OrderBusiness();
+            List<OrderInfo> orderInfos = orderBusiness.GetAll();
+            
             Base bBase = new Base();
             bBase.aa = "aaa";
             //TestInfo test = (TestInfo) bBase;
@@ -44,7 +61,7 @@ namespace Test
                 id = 2,
                 goodsId = 2
             });
-            var list = (from a in apiGoodsTypeInfos
+           var list = (from a in apiGoodsTypeInfos
                 join b in goodsExtendInfos on a.id equals b.goodsId
                 select new TestInfo()
                 {
@@ -92,7 +109,7 @@ namespace Test
     }
 
 
-public class TestInfo: Base
+    public class TestInfo : Base
     {
         public int aid { get; set; }
         public int bid { get; set; }

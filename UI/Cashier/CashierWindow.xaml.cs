@@ -19,9 +19,11 @@ namespace UI.Cashier
     /// </summary>
     public partial class CashierWindow : Window
     {
+        public static Window cashierWindow= null;
         public CashierWindow()
         {
             InitializeComponent();
+            cashierWindow = this;
             ContentControlCashier.Content = new Frame()
             {
                 Content = new CashierMainUC()

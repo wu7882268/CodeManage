@@ -15,5 +15,6 @@ namespace Models.Interfaces
     {
         List<ApiGoodsTypeInfo> GetList(string goodsName, int typeId);
         bool IsCheck(out string msg);
+        string UpdateStock(int id, int number);
     }
 }

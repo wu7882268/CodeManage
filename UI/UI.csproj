@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>UI</RootNamespace>
     <AssemblyName>UI</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -31,6 +31,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -128,6 +129,9 @@
     <Compile Include="Manage\HomePage\HomeUC.xaml.cs">
       <DependentUpon>HomeUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Information\SupplierUpdate.xaml.cs">
+      <DependentUpon>SupplierUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Information\SupplierAdd.xaml.cs">
       <DependentUpon>SupplierAdd.xaml</DependentUpon>
     </Compile>
@@ -164,6 +168,12 @@
     <Compile Include="Manage\Replenish\GoodsUpdate.xaml.cs">
       <DependentUpon>GoodsUpdate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Replenish\ReplenishUpdate.xaml.cs">
+      <DependentUpon>ReplenishUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Replenish\ReturnUpdate.xaml.cs">
+      <DependentUpon>ReturnUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Replenish\ReturnAdd.xaml.cs">
       <DependentUpon>ReturnAdd.xaml</DependentUpon>
     </Compile>
@@ -191,6 +201,12 @@
     <Compile Include="Manage\Replenish\ReplenishUC.xaml.cs">
       <DependentUpon>ReplenishUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Sales\CustomerReturnUpdate.xaml.cs">
+      <DependentUpon>CustomerReturnUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Sales\SalesUpdate.xaml.cs">
+      <DependentUpon>SalesUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Sales\SalesAdd.xaml.cs">
       <DependentUpon>SalesAdd.xaml</DependentUpon>
     </Compile>
@@ -209,7 +225,6 @@
     <Compile Include="Manage\Statistical\SalesStatistics.xaml.cs">
       <DependentUpon>SalesStatistics.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\GoodsUiInfo.cs" />
     <Compile Include="StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
@@ -254,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manage\HomePage\HomeUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Information\SupplierUpdate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -305,6 +324,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Manage\Replenish\ReplenishUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Replenish\ReturnUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Manage\Replenish\ReturnAdd.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -338,6 +365,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Manage\Replenish\ReplenishUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Sales\CustomerReturnUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage\Sales\SalesUpdate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -516,7 +551,10 @@
   <ItemGroup>
     <Content Include="DLL\Utility.Tool.Controls.dll" />
     <Content Include="DLL\Utility.Tool.Controls.pdb" />
+    <Resource Include="Images\百信LOGO.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -59,7 +59,7 @@ namespace UI.Manage.Sales
         {
             if (DataGrid_file.SelectedItem is OrderInfo orderInfo)
             {
-                //Delegates.JumpDelegateObj("UI.Replenish.TypeUpdate", orderInfo);
+                Delegates.JumpDelegateObj("UI.Sales.SalesUpdate", orderInfo);
             }
         }
 

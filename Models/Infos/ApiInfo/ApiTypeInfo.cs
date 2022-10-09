@@ -16,6 +16,10 @@ namespace Models.Infos.ApiInfo
         /// </summary>
         public int id { get; set; }
         /// <summary>
+        /// 门店id
+        /// </summary>
+        public int storeId { get; set; }
+        /// <summary>
         /// 自定义属性名称(必选 畅销  热销)
         /// </summary>
         public string customName { get; set; }
@@ -60,13 +64,17 @@ namespace Models.Infos.ApiInfo
         /// </summary>
         public int isRequire { get; set; }
         /// <summary>
+        /// 商品类型1
+        /// </summary>
+        public int goodsType { get; set; }
+        /// <summary>
         /// 时间类型
         /// </summary>
         public int timeType { get; set; }
         /// <summary>
         /// children
         /// </summary>
-        public List<string> children { get; set; }
+        public List<ApiTypeSubInfo> children { get; set; }
         /// <summary>
         /// type
         /// </summary>

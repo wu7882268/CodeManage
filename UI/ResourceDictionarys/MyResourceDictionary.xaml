@@ -1152,7 +1152,8 @@
         </Style.Triggers>
     </Style>
     <Style x:Key="ComboBoxButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="Width" Value="30"/>
+        <!--<Setter Property="Width" Value="30"/>-->
+        <Setter Property="Margin" Value="2,0"/>
         <Setter Property="Height" Value="20"/>
         <Setter Property="Foreground" Value="#337ab7"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>

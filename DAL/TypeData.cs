@@ -18,7 +18,7 @@ namespace DAL
             WebHeaderCollection webHeader = new WebHeaderCollection();
             webHeader.Add("Cookie", $"PHPSESSID={ApiStatic.PHPSESSID}");
             List<ApiTypeInfo> list = new List<ApiTypeInfo>();
-            string str = HttpHelper.GetHttpResponse($"{ApiStatic.ApiUrl}channel/category/get-category-list", 6000, HttpHelper.ContentTypeJson, webHeader, "?page=1&type=2");
+            string str = HttpHelper.GetHttpResponse($"{ApiStatic.ApiUrl}channel/category/get-category-list", 6000, HttpHelper.ContentTypeJson, webHeader, $"?page=1&storeId={ApiStatic.StoreId}");
             int count = int.Parse(JsonHelper.JsonSpecifiedNode(str, "count"));
             str = JsonHelper.JsonSpecifiedNode(str, "data", "data");
             var subList = JsonHelper.JsonToObject<List<ApiTypeInfo>>(str);
@@ -35,15 +35,15 @@ namespace DAL
         }
         private List<ApiTypeInfo> GetPage(WebHeaderCollection webHeader, int page)
         {
-            string str = HttpHelper.GetHttpResponse($"{ApiStatic.ApiUrl}channel/category/get-category-list", 6000, HttpHelper.ContentTypeJson, webHeader, $"?page={page}&type=2");
+            string str = HttpHelper.GetHttpResponse($"{ApiStatic.ApiUrl}channel/category/get-category-list", 6000, HttpHelper.ContentTypeJson, webHeader, $"?page={page}&storeId=1");
             str = JsonHelper.JsonSpecifiedNode(str, "data", "data");
             List<ApiTypeInfo> list = JsonHelper.JsonToObject<List<ApiTypeInfo>>(str);
             return list;
         }
         public string Insert(ApiTypeInfo api)
         {
+            api.storeId = ApiStatic.StoreId;
             WebHeaderCollection webHeader = new WebHeaderCollection();
-
             webHeader.Add("Cookie", $"PHPSESSID={ApiStatic.PHPSESSID}");
             string str = HttpHelper.HttpPost<ApiTypeInfo>($"{ApiStatic.ApiUrl}channel/category/category-save", api, HttpHelper.ContentTypeJson, webHeader);
             var apiMsg = JsonHelper.JsonToObject<ApiBaseInfo<ApiTypeInfo>>(CodeHelper.Unicode2String(str));
@@ -53,7 +53,7 @@ namespace DAL
         public string Delete(ApiTypeInfo api)
         {
             WebHeaderCollection webHeader = new WebHeaderCollection();
-
+            api.storeId = ApiStatic.StoreId;
             webHeader.Add("Cookie", $"PHPSESSID={ApiStatic.PHPSESSID}");
             string str = HttpHelper.HttpPost<ApiTypeInfo>($"{ApiStatic.ApiUrl}channel/category/category-del", api, HttpHelper.ContentTypeJson, webHeader);
             var apiMsg = JsonHelper.JsonToObject<ApiBaseInfo<ApiTypeInfo>>(CodeHelper.Unicode2String(str));

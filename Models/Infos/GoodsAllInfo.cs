@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Models.Infos.ApiInfo;
 
-namespace UI.Models
+namespace Models.Infos
 {
-    public class GoodsUiInfo : ApiGoodsTypeInfo
+    public class GoodsAllInfo : ApiGoodsTypeInfo
     {
         /// <summary>
-        /// bid
+        /// id
         /// </summary>
         public int bid { get; set; }
         /// <summary>
@@ -20,11 +20,15 @@ namespace UI.Models
         /// <summary>
         /// 库存下限
         /// </summary>
-        public string inventoryAlert { get; set; }
+        public int inventoryAlert { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>
         public string createTime { get; set; }
+        /// <summary>
+        /// 商品备注
+        /// </summary>
+        public string note { get; set; }
 
     }
 }
