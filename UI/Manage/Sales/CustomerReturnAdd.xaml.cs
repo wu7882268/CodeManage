@@ -40,6 +40,7 @@ namespace UI.Sales
         {
             if (IsCheck())
             {
+
                 returnCustomerInfo.createTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 //returnCustomerInfo.userId = ApiStatic.UserId;
                 returnCustomerInfo.returnTime = TimePicker_time.DateTime.ToString("yyyy-MM-dd HH:mm:ss");
